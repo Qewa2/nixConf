@@ -42,5 +42,7 @@ It should be done automacally when you rebuild your system with
 sudo nixos-rebuild switch --flake <flake uri>
 ```
 
+## [TODO](./TODO.md)
+
 
 Thanks for checking this config and/or using my config :)
