@@ -68,8 +68,10 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users = {
-      "qewa" = import ./home.nix;
+      qewa = ./home.nix;
     };
   };
 
