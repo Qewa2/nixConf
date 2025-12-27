@@ -45,4 +45,5 @@ sudo nixos-rebuild switch --flake <flake uri>
 ## [TODO](./TODO.md)
 
 
+## Thanks :)
 Thanks for checking this config and/or using my config :)
