@@ -1,2 +1,4 @@
 # TODO LIST
-**REINSTALL AND CONFIGURE HOME-MANAGER SINCE IT DOESN'T WORK**
+- **Refactor** `hosts/main/configuration.nix` **into Modules**
+    - Refactor existing modules to be more easy to use
+    - Add more modules and configs
