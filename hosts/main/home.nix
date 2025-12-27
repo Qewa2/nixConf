@@ -21,7 +21,7 @@
       enable = true;
       settings = {
         user = {
-	  name = "Quinn";
+	  name = "Qewa2";
 	  email = "quinn.schubert@icloud.com";
 	};
 	safe.directory = "/etc/nixos";
