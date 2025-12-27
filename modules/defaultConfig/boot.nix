@@ -21,7 +21,7 @@
 			enable = lib.mkDefault true;
 			settings = {
 				default_session = {
-					command = lib.mkDefault "${pkgs.tuigreet}/bin/tuigreet --cmd \"hyprland\"";
+					command = lib.mkDefault "${pkgs.tuigreet}/bin/tuigreet --cmd \"/etc/nixos/modules/defaultConfig/boot.sh\"";
 					user = lib.mkDefault "greeter";
 					timeout = lib.mkDefault 10;
 				};
