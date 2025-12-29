@@ -40,7 +40,6 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
   
 
-  nixpkgs.config.allowUnfree = true;
   # The home.packages option allows you to install Nix packages into your
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly

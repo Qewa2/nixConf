@@ -77,6 +77,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (_: true);
 
   # Change ownership of /etc/nixos to the nixos group
   systemd.tmpfiles.rules = [
