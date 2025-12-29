@@ -108,6 +108,7 @@
      bibata-cursors
      lshw
      fzf
+     inputs.awww.packages.$pkgs.stdenv.hostPlatform.system}.awww
   ];
   programs.hyprland.enable = true;
   services.pipewire.enable = false;
