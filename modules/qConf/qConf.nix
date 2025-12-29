@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }:
 {
 	imports = [
-		./boot.nix
+		./qBoot.nix
 	];
 
 	options.qConf = {
@@ -12,6 +12,6 @@
 	};
 
 	config = lib.mkIf config.qConf.enable {
-		myBoot.enable = lib.mkDefault true;
+		qConf.qBoot.enable = lib.mkDefault true;
 	};
 }

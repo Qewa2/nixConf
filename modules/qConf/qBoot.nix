@@ -1,8 +1,8 @@
 { lib, pkgs, config, ... }:
 {
-	imports = [
-		./qConf.nix
-	];
+	#imports = [
+	# 	./qConf.nix
+	#];
 	options = {
 		qConf.qBoot.enable = lib.mkOption {
 			type = lib.types.bool;
