@@ -9,10 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ../../modules/defaultConfig/defaultConfig.nix
+      ../../modules/qConf/qConf.nix
     ];
   
-  defaultConfig.enable = true;
+  qConf.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

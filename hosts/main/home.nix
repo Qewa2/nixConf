@@ -60,6 +60,8 @@
     cowsay
     hyprcursor
     bibata-cursors
+    discord
+    steam
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

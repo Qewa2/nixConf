@@ -4,14 +4,14 @@
 		./boot.nix
 	];
 
-	options.defaultConfig = {
+	options.qConf = {
 		enable = lib.mkOption {
 			type = lib.types.bool;
 			default = false;
 		};
 	};
 
-	config = lib.mkIf config.defaultConfig.enable {
+	config = lib.mkIf config.qConf.enable {
 		myBoot.enable = lib.mkDefault true;
 	};
 }
