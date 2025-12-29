@@ -105,11 +105,23 @@
      sudo
      hyprcursor
      bibata-cursors
+     lshw
   ];
   programs.hyprland.enable = true;
   services.pipewire.enable = false;
   services.pulseaudio.enable = true;
   services.pulseaudio.support32Bit = true;
+  
+  # Nvidia
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+  };
 
   environment.variables = {
     EDITOR = "nvim";
@@ -145,5 +157,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }
