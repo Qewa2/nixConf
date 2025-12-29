@@ -97,13 +97,7 @@
   #
   #  /etc/profiles/per-user/qewa/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    HYPRCURSOR_THEME = "Bibata-Modern-Classic";
-    HYPRCURSOR_SIZE = 24;
-    XCURSOR_THEME = "Bibata-Modern-Classic";
-    XCURSOR_SOZE = 24;
-  };
+  home.sessionVariables = {};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
