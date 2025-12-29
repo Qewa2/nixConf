@@ -1,4 +1,6 @@
 # TODO LIST
 - **Refactor** `hosts/main/configuration.nix` **into Modules**
-    - Refactor existing modules to be more easy to use
+    - Configure Hyprland
+        - Actually configure it (module)
+        - make awww run on startup
     - Add more modules and configs
