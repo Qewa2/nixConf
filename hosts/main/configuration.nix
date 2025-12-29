@@ -107,6 +107,7 @@
      hyprcursor
      bibata-cursors
      lshw
+     fzf
   ];
   programs.hyprland.enable = true;
   services.pipewire.enable = false;
