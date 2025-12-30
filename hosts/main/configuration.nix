@@ -97,7 +97,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-     neovim
+     vim
      neofetch
      fastfetch
      gitFull
@@ -118,6 +118,21 @@
      fzf
      inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
   ];
+
+  programs.nvf = {
+    enable = true;
+    settings.vim = {
+      theme = {
+        enable = true;
+        name = "gruvbox";
+	style = "dark";
+      };
+    statusline.lualine.enable = true;
+    telescope.enable = true;
+    autocomplete.nvim-cmp.enable = true;
+    };
+  };
+
   programs.steam = {
   	enable = true;
 	remotePlay.openFirewall = true;

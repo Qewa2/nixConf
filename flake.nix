@@ -10,9 +10,13 @@
     };
     
     awww.url = "git+https://codeberg.org/LGFae/awww";
+    nvf  = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nvf, home-manager, ... }@inputs: {
     nixosConfigurations = {
       main = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -20,6 +24,7 @@
 	modules = [
           ./hosts/main/configuration.nix
 	  home-manager.nixosModules.home-manager
+	  nvf.nixosModules.default
         ];
       };
     };
