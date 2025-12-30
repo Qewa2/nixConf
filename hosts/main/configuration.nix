@@ -15,7 +15,7 @@
   qConf.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -23,6 +23,14 @@
   # Enable networking
   networking.networkmanager.enable = true;
   
+  system.activationScripts.NixOsPermissions = {
+    text = ''
+      find /etc/nixos -type f -exec chown root:nixos {} +
+      find /etc/nixos -type f -exec chmod -R 664 {} +
+      chmod -R 774 /etc/nixos/modules/qConf/boot.sh
+    '';
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.
