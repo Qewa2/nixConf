@@ -25,7 +25,9 @@
   
         system.activationScripts.NixOsPermissions = {
                 text = ''
-                        find /etc/nixos -type f -exec chown root:nixos {} +
+                        chown root:nixos /etc/nixos
+                        find /etc/nixos -exec chown root:nixos {} +
+                        find /etc/nixos -type d -exec chmod -R 774 {} +
                         find /etc/nixos -type f -exec chmod -R 664 {} +
                         chmod -R 774 /etc/nixos/modules/qConf/boot.sh
                 '';
