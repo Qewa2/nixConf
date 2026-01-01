@@ -6,9 +6,13 @@
                         name = "gruvbox";
                         style = "dark";
                 };
-
+                
+                lsp.enable = true;
                 languages = {
+                        enableTreesitter = true;
                         nix.enable = true;
+                        clang.enable = true;
+                        pythone.enable = true;
                 };
                 
                 statusline.lualine.enable = true;
