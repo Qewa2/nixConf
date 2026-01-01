@@ -29,12 +29,7 @@
                         };
                 };
 
-                steam = {
-                        enable = true;
-                        remotePlay.openFirewall = true;
-                        dedicatedServer.openFirewall = true;
-                        localNetworkGameTransfers.openFirewall = true;
-                };
+                
         };
 
         # This value determines the Home Manager release that your configuration is

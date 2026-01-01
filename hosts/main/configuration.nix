@@ -139,6 +139,13 @@
                 };
         };
 
+        programs.steam = {
+                enable = true;
+                remotePlay.openFirewall = true;
+                dedicatedServer.openFirewall = true;
+                localNetworkGameTransfers.openFirewall = true;
+        };
+
         programs.hyprland = {
                 enable = true;
                 package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
