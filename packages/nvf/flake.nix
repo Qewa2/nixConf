@@ -11,10 +11,10 @@
                                 modules = [ ./configuration.nix ];
                         }).neovim;
                 
-                nixosConfiguration.nixos = nixpkgs.lib.nixosSystem {
-                        modules = [
-                                nvf.nixosModules.default
-                        ];
-                };
+#                nixosConfiguration.nixos = nixpkgs.lib.nixosSystem {
+#                        modules = [
+#                                nvf.nixosModules.default
+#                        ];
+#                };
         };
 }
