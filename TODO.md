@@ -1,8 +1,12 @@
 # TODO LIST
+
 - **Refactor** `hosts/main/configuration.nix` **into Modules**
-    - Install the [development version](https://wiki.hypr.land/Nix/Hyprland-on-NixOS/) of hyprland with flakes
     - Configure Hyprland
         - Actually configure it (module)
         - make awww run on startup
     - Add more modules and configs
-- **Install nvf and configure it**
+- **Maybe make nvf a standalone install**
+    - [GitHub](https://github.com/NotAShelf/nvf/tree/main/)
+    - [Manual](https://nvf.notashelf.dev/)
+    - more configs
+- **switch to (pipewire)[https://nixos.wiki/wiki/PipeWire] + options(module)**
