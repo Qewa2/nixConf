@@ -99,7 +99,6 @@
                 neofetch
                 fastfetch
                 gitFull
-                hyprland
                 kitty
                 brave
                 ffmpeg
@@ -140,14 +139,11 @@
                 };
         };
 
-        programs.steam = {
+        programs.hyprland = {
                 enable = true;
-                remotePlay.openFirewall = true;
-                dedicatedServer.openFirewall = true;
-                localNetworkGameTransfers.openFirewall = true;
+                package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+                portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         };
-  
-        programs.hyprland.enable = true;
 
         services.pipewire.enable = false;
         services.pulseaudio.enable = true;
