@@ -10,3 +10,9 @@
     - [Manual](https://nvf.notashelf.dev/)
     - more configs
 - **switch to (pipewire)[https://nixos.wiki/wiki/PipeWire] + options(module)**
+- **add splashscreen maybe**
+    **(plymouth)[https://wiki.nixos.org/wiki/Plymouth]**
+        **(nixos-package)[https://search.nixos.org/packages?channel=25.11&show=plymouth&query=plymouth]**
+        **(nixos-options)[https://search.nixos.org/options?channel=25.11&show=plymouth&query=plymouth]**
+
+
