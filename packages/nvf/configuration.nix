@@ -12,7 +12,7 @@
                         enableTreesitter = true;
                         nix.enable = true;
                         clang.enable = true;
-                        pythone.enable = true;
+                        python.enable = true;
                 };
                 
                 statusline.lualine.enable = true;
