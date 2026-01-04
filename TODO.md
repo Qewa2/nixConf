@@ -8,7 +8,7 @@
 - **Maybe make nvf a standalone install**
     - [GitHub](https://github.com/NotAShelf/nvf/tree/main/)
     - [Manual](https://nvf.notashelf.dev/)
-    - more configs
+    - maybe flake-parts (not sure if thats what i want)
 - **switch to (pipewire)[https://nixos.wiki/wiki/PipeWire] + options(module)**
 - **add splashscreen maybe**
     **(plymouth)[https://wiki.nixos.org/wiki/Plymouth]**
