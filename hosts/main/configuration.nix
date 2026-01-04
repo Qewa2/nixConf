@@ -114,6 +114,7 @@
                 bibata-cursors
                 lshw
                 fzf
+                unzip
                 inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
         ];
 
