@@ -64,7 +64,6 @@
                 hyprcursor
                 bibata-cursors
                 discord
-                steam
                 heroic
         ];
 
