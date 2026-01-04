@@ -29,7 +29,6 @@
                         find /etc/nixos -exec chown root:nixos {} +
                         find /etc/nixos -type d -exec chmod -R 774 {} +
                         find /etc/nixos -type f -exec chmod -R 664 {} +
-                        chmod -R 774 /etc/nixos/modules/qConf/boot.sh
                 '';
         };
 
@@ -153,6 +152,8 @@
                 package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
                 portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         };
+
+        boot.plymouth.enable = true;
 
         services.pipewire.enable = false;
         services.pulseaudio.enable = true;

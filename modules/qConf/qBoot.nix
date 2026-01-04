@@ -1,8 +1,14 @@
 { lib, pkgs, config, ... }:
+
+let
+        bootScript = pkgs.writeShellScript "greetd-boot" ''
+                #!/${pkgs.bash}/bin/bash
+                ${pkgs.fastfetch}/bin/fastfetch
+                ${pkgs.hyprland}/bin/start-hyprland
+                exec ${pkgs.bash}/bin/bash
+        '';
+in
 {
-	#imports = [
-	# 	./qConf.nix
-	#];
 	options = {
 		qConf.qBoot.enable = lib.mkOption {
 			type = lib.types.bool;
@@ -21,14 +27,15 @@
 		boot.loader.efi.canTouchEfiVariables = lib.mkDefault true;
 
 		services.greetd = {
-			enable = lib.mkDefault true;
-			settings = {
-				default_session = {
-					command = lib.mkDefault "${pkgs.tuigreet}/bin/tuigreet --cmd \"/etc/nixos/modules/qConf/boot.sh\"";
-					user = lib.mkDefault "greeter";
-					timeout = lib.mkDefault 10;
-				};
-			};
-		};
+		        enable = lib.mkDefault true;
+		        settings = {
+			        default_session = {
+				        command = lib.mkDefault "${pkgs.tuigreet}/bin/tuigreet \\
+                                       --cmd \"${bootScript}\"";
+				        user = lib.mkDefault "greeter";
+				        timeout = lib.mkDefault 10;
+			        };
+		        };
+	        };
 	};
 }
