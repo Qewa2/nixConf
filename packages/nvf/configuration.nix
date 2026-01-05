@@ -6,10 +6,6 @@
                         tabstop = 8;
                 };
 
-                extraPackages = with pkgs; [
-                        tree-sitter
-                ];
-
                 clipboard = {
                         enable = true;
                         providers.wl-copy.enable = true;
