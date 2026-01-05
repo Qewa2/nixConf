@@ -4,7 +4,7 @@ let
         bootScript = pkgs.writeShellScript "greetd-boot" ''
                 #!/${pkgs.bash}/bin/bash
                 ${pkgs.fastfetch}/bin/fastfetch
-                ${pkgs.hyprland}/bin/start-hyprland
+                ${pkgs.hyprland}/bin/start-hyprland > /dev/null 2>&1
                 exec ${pkgs.bash}/bin/bash
         '';
 in
