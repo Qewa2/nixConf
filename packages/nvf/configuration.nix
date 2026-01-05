@@ -20,7 +20,26 @@
                 };
 
                 statusline.lualine.enable = true;
-                telescope.enable = true;
+                telescope = {
+                        enable = true;
+                        extensions = [
+                                {
+                                        name = "fzf";
+                                        packages = [pkgs.vimPlugins.telescope-fzf-native-nvim];
+                                        setup = {fzf = {fuzzy = true;};};
+                                }
+                        ];
+                };
+
+                binds = {
+                        cheatsheet.enable = true;
+                        whichKey = {
+                                enable = true;
+                                setupOpts.preset = "classic";
+                        };
+                        hardtime-nvim.enable = true;
+                };
+
                 autocomplete.nvim-cmp.enable = true;
 
                 lsp.enable = true;
