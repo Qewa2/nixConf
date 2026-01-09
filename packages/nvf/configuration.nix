@@ -18,6 +18,27 @@
                         style = "dark";
                         transparent = false;
                 };
+                
+                filetree.nvimTree = {
+                        enable = true;
+                        setupOpts = {
+                                actions.open_file = {
+                                        eject = true;
+                                        quit_on_open = true;
+                                        window_picker.enable = true;
+                                };
+
+                                diagnostics = {
+                                        enable = true;
+                                        show_on_dirs = true;
+                                };
+                                
+                                filesystem_watchers = {
+                                        enable = true;
+                                        debounce_delay = 50;
+                                };
+                        };
+                };
 
                 statusline.lualine.enable = true;
                 telescope = {
