@@ -140,6 +140,11 @@
                         };
                 };
         };
+        
+        programs.nh = {
+                enable = true;
+                flake = "/etc/nixos/#main";
+        };
 
         programs.steam = {
                 enable = true;
