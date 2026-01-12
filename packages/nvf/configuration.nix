@@ -61,15 +61,21 @@
                         hardtime-nvim.enable = true;
                 };
 
-                autocomplete.nvim-cmp.enable = true;
+                autocomplete.blink-cmp.enable = true;
 
                 lsp.enable = true;
                 languages = {
 			enableTreesitter = true;
                         clang.enable = true;
-			nix.enable = true;
 			python.enable = true;
+                        nix = {
+                                enable = true;
+                                extraDiagnostics.enable = true;
+                                lsp = {
+                                        enable = true;
+                                        servers = [ "nil" "nixd" ];
+                                };
+                        };
                 };
         };
-
 }
