@@ -116,9 +116,13 @@
                 fzf
                 unzip
                 inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+                (inputs.nvf.lib.neovimConfiguration {
+                        inherit pkgs;
+                        modules = [ ./nvfConf.nix ];
+                }).neovim
         ];
 
-        programs.nvf = {
+        /*programs.nvf = {
                 enable = true;
                 settings.vim = {
                         theme = {
@@ -139,7 +143,7 @@
                                 python.enable = true;
                         };
                 };
-        };
+        };*/
         
         programs.nh = {
                 enable = true;
