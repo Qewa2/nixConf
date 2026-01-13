@@ -19,6 +19,12 @@
                         transparent = false;
                 };
                 
+                visuals = {
+                        highlight-undo.enable = true;
+                        fidget-nvim.enable = true;
+                        indent-blankline.enable = true;
+                };
+
                 filetree.nvimTree = {
                         enable = true;
                         setupOpts = {
