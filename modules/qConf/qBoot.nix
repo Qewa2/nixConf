@@ -4,7 +4,7 @@ let
         bootScript = pkgs.writeShellScript "greetd-boot" ''
                 #!/${pkgs.bash}/bin/bash
                 ${pkgs.fastfetch}/bin/fastfetch
-                ${qConf.qBoot.sessionCommand} > /dev/null 2>&1
+                ${config.qConf.qBoot.sessionCommand} > /dev/null 2>&1
                 exec ${pkgs.bash}/bin/bash
         '';
 in
@@ -22,7 +22,7 @@ in
 	};
 
 	config = lib.mkIf config.qConf.qBoot.enable {
-	        boot = {	
+	        boot = {
                         loader = {
                                 systemd-boot.enable = lib.mkDefault false;
 		                grub = {
