@@ -11,12 +11,11 @@ in
         };
 
         config = lib.mkIf cfg.enable {
-                environment.systemPackages =
-                        (config.environment.systemPackages or []) ++ [
-                                (inputs.nvf.lib.neovimConfiguration {
-                                        inherit pkgs;
-                                        modules = [ ./nvfConf.nix ];
-                                }).neovim
+                environment.systemPackages = [
+                        (inputs.nvf.lib.neovimConfiguration {
+                                 inherit pkgs;
+                                 modules = [ ./nvfConf.nix ];
+                        }).neovim
                 ];
         };
 }
