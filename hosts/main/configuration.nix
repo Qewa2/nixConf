@@ -10,7 +10,7 @@
                 ./hardware-configuration.nix
                 inputs.home-manager.nixosModules.default
                 ../../modules/qConf/qConf.nix
-                ../../modules/configs.nix
+                ../../modules/configs/configs.nix
         ];
   
         qConf.enable = true;
