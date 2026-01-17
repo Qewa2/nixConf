@@ -121,7 +121,7 @@
 
         programs.nh = {
                 enable = true;
-                flake = "${config.myConfig.flake}";
+                flake = "${config.myConfigs.flake}";
         };
 
         programs.steam = {
