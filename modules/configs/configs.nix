@@ -14,7 +14,7 @@ in
                 };
         };
 
-        config = lib.mIf cfg.enableAll {
+        config = lib.mkIf cfg.enableAll {
                 myConfigs.nvf.enable = lib.mkDefault true;
         };
 }
