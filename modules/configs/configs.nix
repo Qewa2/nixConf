@@ -12,6 +12,10 @@ in
                         type = lib.types.bool;
                         default = false;
                 };
+                flake = lib.mkOption {
+                        type = lib.types.str;
+                        default = "/etc/nixos/#main";
+                };
         };
 
         config = lib.mkIf cfg.enableAll {
