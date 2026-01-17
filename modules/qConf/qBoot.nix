@@ -2,10 +2,7 @@
 
 let
         bootScript = pkgs.writeShellScript "greetd-boot" ''
-                #!/${pkgs.bash}/bin/bash
-                ${pkgs.fastfetch}/bin/fastfetch
-                ${config.qConf.qBoot.sessionCommand} > /dev/null 2>&1
-                exec ${pkgs.bash}/bin/bash
+                ${config.qConf.qBoot.onBoot}
         '';
 in
 {
@@ -15,9 +12,14 @@ in
 			default = false;
 		};
 
-                qConf.qBoot.sessionCommand = lib.mkOption {
+                qConf.qBoot.onBoot = lib.mkOption {
                         type = lib.types.str;
-                        default = "${pkgs.hyprland}/bin/start-hyprland";
+                        default = ''
+                                #!/${pkgs.bash}/bin/bash
+                                ${pkgs.fastfetch}/bin/fastfetch
+                                ${pkgs.hyprland}/bin/start-hyprland > /dev/null 2>&1
+                                exec ${pkgs.bash}/bin/bash
+                        '';
                 };
 	};
 

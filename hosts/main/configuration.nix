@@ -10,9 +10,11 @@
                 ./hardware-configuration.nix
                 inputs.home-manager.nixosModules.default
                 ../../modules/qConf/qConf.nix
+                ../../modules/configs.nix
         ];
   
         qConf.enable = true;
+        myConfigs.enableAll = true;  
         networking.hostName = "nixos"; # Define your hostname.
         # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   
@@ -115,35 +117,8 @@
                 fzf
                 unzip
                 inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
-                (inputs.nvf.lib.neovimConfiguration {
-                        inherit pkgs;
-                        modules = [ ./nvfConf.nix ];
-                }).neovim
         ];
 
-        /*programs.nvf = {
-                enable = true;
-                settings.vim = {
-                        theme = {
-                                enable = true;
-                                name = "gruvbox";
-                                style = "dark";
-                        };
-      
-                        statusline.lualine.enable = true;
-                        telescope.enable = true;
-                        autocomplete.nvim-cmp.enable = true;
-                        
-                        lsp.enable = true;
-                        languages = {
-                                enableTreesitter = true;
-                                nix.enable = true;
-                                clang.enable = true;
-                                python.enable = true;
-                        };
-                };
-        };*/
-        
         programs.nh = {
                 enable = true;
                 flake = "/etc/nixos/#main";
