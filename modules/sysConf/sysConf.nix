@@ -1,17 +1,17 @@
 { lib, config, ... }:
 {
 	imports = [
-		./qBoot.nix
+		./sysBoot.nix
 	];
 
-	options.qConf = {
+	options.sysConf = {
 		enable = lib.mkOption {
 			type = lib.types.bool;
 			default = false;
 		};
 	};
 
-	config = lib.mkIf config.qConf.enable {
-		qConf.qBoot.enable = lib.mkDefault true;
+	config = lib.mkIf config.sysConf.enable {
+		sysConf.sysBoot.enable = lib.mkDefault true;
 	};
 }

@@ -2,17 +2,17 @@
 
 let
         bootScript = pkgs.writeShellScript "greetd-boot" ''
-                ${config.qConf.qBoot.onBoot}
+                ${config.sysConf.sysBoot.onBoot}
         '';
 in
 {
 	options = {
-		qConf.qBoot.enable = lib.mkOption {
+		sysConf.sysBoot.enable = lib.mkOption {
 			type = lib.types.bool;
 			default = false;
 		};
 
-                qConf.qBoot.onBoot = lib.mkOption {
+                sysConf.sysBoot.onBoot = lib.mkOption {
                         type = lib.types.str;
                         default = ''
                                 #!/${pkgs.bash}/bin/bash
@@ -23,7 +23,7 @@ in
                 };
 	};
 
-	config = lib.mkIf config.qConf.qBoot.enable {
+	config = lib.mkIf config.sysConf.sysBoot.enable {
 	        boot = {
                         loader = {
                                 systemd-boot.enable = lib.mkDefault false;
