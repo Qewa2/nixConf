@@ -10,3 +10,5 @@
 - **switch to [pipewire](https://nixos.wiki/wiki/PipeWire) + options(module)**
 - **use [stylix](https://nix-community.github.io/stylix/index.html)**
 - **Add USB Stick config for tailsOS like use**
+- **Add common as a host (for stuff all hosts should have enabled)**
+- **Add nix functions to create hosts and users**
