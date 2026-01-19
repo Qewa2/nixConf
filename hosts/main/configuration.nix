@@ -18,7 +18,7 @@
                 sysBoot.enable = true;
                 sysSound = {
                         enable = true;
-                        pipewire = true;
+                        pipewire.enable = true;
                 };
         };
 
