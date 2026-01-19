@@ -2,6 +2,7 @@
 {
 	imports = [
 		./sysBoot.nix
+                ./sysSound.nix
 	];
 
 	options.sysConf = {
@@ -12,6 +13,9 @@
 	};
 
 	config = lib.mkIf config.sysConf.enable {
-		sysConf.sysBoot.enable = lib.mkDefault true;
+		sysConf = {
+                        sysBoot.enable = lib.mkDefault true;
+                        sysSound.enable = lib.mkDefault true;
+                };
 	};
 }

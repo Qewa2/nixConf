@@ -13,7 +13,15 @@
                 ../../modules/configs/configs.nix
         ];
   
-        sysConf.enable = true;
+        sysConf = {
+                enable = true;
+                sysBoot.enable = true;
+                sysSound = {
+                        enable = true;
+                        pipewire = true;
+                };
+        };
+
         myConfigs.enableAll = true;  
         networking.hostName = "nixos"; # Define your hostname.
         # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -139,10 +147,6 @@
 
         boot.plymouth.enable = true;
 
-        services.pipewire.enable = false;
-        services.pulseaudio.enable = true;
-        services.pulseaudio.support32Bit = true;
-  
         # Nvidia
         hardware.graphics.enable = true;
         services.xserver.videoDrivers = ["nvidia"];
