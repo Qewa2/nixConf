@@ -24,7 +24,6 @@ in
 
         config = lib.mkIf cfg.enable (lib.mkMerge [
                 (lib.mkIf cfg.pulseAudio.enable {
-                        sysConf.sysSound.pipewire.enable = lib.mkForce false;
                         services = {
                                 pipewire.enable = lib.mkForce false;
                                 pulseaudio = {
@@ -35,7 +34,6 @@ in
                 })
 
                 (lib.mkIf cfg.pipewire.enable {
-                        sysConf.sysSound.pulseAudio.enable = lib.mkForce false;
                         security.rtkit.enable = lib.mkDefault true;
                         services = {
                                 pulseaudio.enable = lib.mkForce false;
