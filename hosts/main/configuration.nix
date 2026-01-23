@@ -29,6 +29,12 @@
                 mango.configuration = {
                         programs.hyprland.enable = lib.mkForce false;
                         programs.mango.enable = true;
+                        sysConf.sysBoot.onBoot = ''
+                                #!/{pkgs.bash}/bin/bash
+                                ${pkgs.fastfetch}/bin/fastfetch
+                                
+                                exec ${pkgs.bash}/bin/bash
+                        '';
                 };
         }; 
 
