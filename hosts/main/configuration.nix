@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, config, ... }:
+{ pkgs, inputs, config, lib, ... }:
 
 {
         imports =
@@ -24,6 +24,14 @@
 
         myConfigs.enableAll = true;  
         networking.hostName = "nixos"; # Define your hostname.
+        
+        specialisation = {
+                mango.configuration = {
+                        programs.hyprland.enable = lib.mkForce false;
+                        programs.mango.enable = true;
+                };
+        }; 
+
         # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   
         # Configure network proxy if necessary

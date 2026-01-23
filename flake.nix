@@ -12,6 +12,10 @@
                 awww.url = "git+https://codeberg.org/LGFae/awww";
                 
                 hyprland.url = "github:hyprwm/Hyprland";
+                mango = {
+                        url = "github:DreamMaoMao/mango";
+                        inputs.nixpkgs.follows = "nixpkgs";
+                };
 
                 nvf  = {
                         url = "github:NotAShelf/nvf";
@@ -19,7 +23,7 @@
                 };
         };
 
-        outputs = { self, nixpkgs, nvf, home-manager, ... }@inputs: {
+        outputs = { self, nixpkgs, nvf, home-manager, mango, ... }@inputs: {
                 nixosConfigurations = {
                         main = nixpkgs.lib.nixosSystem {
                                 specialArgs = { inherit inputs; };
@@ -28,6 +32,7 @@
                                         ./hosts/main/configuration.nix
                                         home-manager.nixosModules.home-manager
                                         nvf.nixosModules.default
+                                        mango.nixosModules.mango
                                 ];
                         };
                         tailsNix = nixpkgs.lib.nixosSystem {
