@@ -30,7 +30,7 @@
         
         specialisation = {
                 mango.configuration = {
-                        programs.hyprland.enble = lib.mkForce false;
+                        programs.hyprland.enable = lib.mkForce false;
                         sysConf.sysBoot.onBoot = ''
                                 #!/{pkgs.bash}/bin/bash
                                 ${pkgs.fastfetch}/bin/fastfetch
