@@ -33,7 +33,7 @@
                         sysConf.sysBoot.onBoot = ''
                                 #!/{pkgs.bash}/bin/bash
                                 ${pkgs.fastfetch}/bin/fastfetch
-                                ${config.programs.mango.package}/bin/mango 
+                                ${config.programs.mango.package}/bin/mango -c /etc/mango
                                 exec ${pkgs.bash}/bin/bash
                         '';
                 };
