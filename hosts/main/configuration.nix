@@ -11,6 +11,7 @@
                 inputs.home-manager.nixosModules.default
                 ../../modules/sysConf/sysConf.nix
                 ../../modules/configs/configs.nix
+                ../../modules/dotfiles/dotfiles.nix
         ];
   
         sysConf = {
@@ -22,17 +23,17 @@
                 };
         };
 
+        dotfiles.enableAll = true;
+
         myConfigs.enableAll = true;  
         networking.hostName = "nixos"; # Define your hostname.
         
         specialisation = {
                 mango.configuration = {
-                        programs.hyprland.enable = lib.mkForce false;
-                        programs.mango.enable = true;
                         sysConf.sysBoot.onBoot = ''
                                 #!/{pkgs.bash}/bin/bash
                                 ${pkgs.fastfetch}/bin/fastfetch
-                                
+                                ${pkgs.mango}/bin/mango 
                                 exec ${pkgs.bash}/bin/bash
                         '';
                 };
