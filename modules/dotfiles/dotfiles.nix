@@ -1,6 +1,6 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-        dotfiles = pkgs.lib.file.mkOutOfStoreSymlink "/etc/nixos/modules/dotfiles";
+        dotfiles = ./.;
         cfg = config.dotfiles;
 
         niriEnable = cfg.niri.enable || cfg.enableAll;
