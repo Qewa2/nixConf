@@ -28,18 +28,6 @@
         myConfigs.enableAll = true;  
         networking.hostName = "nixos"; # Define your hostname.
         
-        specialisation = {
-                mango.configuration = {
-                        programs.hyprland.enable = lib.mkForce false;
-                        sysConf.sysBoot.onBoot = ''
-                                #!/{pkgs.bash}/bin/bash
-                                ${pkgs.fastfetch}/bin/fastfetch
-                                ${config.programs.mango.package}/bin/mango -c /etc/mango
-                                exec ${pkgs.bash}/bin/bash
-                        '';
-                };
-        }; 
-
         # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   
         # Configure network proxy if necessary
@@ -130,6 +118,7 @@
                 ffmpeg
                 wl-clipboard
                 wofi
+                rofi
                 pulseaudio
                 pavucontrol
                 tree

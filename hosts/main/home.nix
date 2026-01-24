@@ -80,6 +80,7 @@
                 #   org.gradle.console=verbose
                 #   org.gradle.daemon.idletimeout=3600000
                 # '';
+                ".config/mango".source = ../../modules/dotfiles/mango;
         };
 
         # Home Manager can also manage your environment variables through

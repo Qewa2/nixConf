@@ -17,7 +17,7 @@ in
                         default = ''
                                 #!/${pkgs.bash}/bin/bash
                                 ${pkgs.fastfetch}/bin/fastfetch
-                                ${pkgs.hyprland}/bin/start-hyprland > /dev/null 2>&1
+                                ${config.programs.mango.package}/bin/mango > /dev/null 2>&1
                                 exec ${pkgs.bash}/bin/bash
                         '';
                 };
