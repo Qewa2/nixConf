@@ -21,6 +21,6 @@ in
 
         config = lib.mkIf cfg.enableAll {
                 myConfigs.nvf.enable = lib.mkDefault true;
-                myConfigs.lutris.enable = lib.mkDefault true;
+                # myConfigs.lutris.enable = lib.mkDefault true;
         };
 }
