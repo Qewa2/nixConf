@@ -13,14 +13,10 @@ in
         config = lib.mkIf cfg.enable {
                 environment.systemPackages = with pkgs; [
                         lutris
-                        (lutris.override {
-                                extraPkgs = with pkgs; [
-                                        protonup-rs
-                                        protonplus
-                                        wine
-                                        winetricks
-                                ];
-                        })
+                        protonup-rs
+                        protonplus
+                        wine
+                        winetricks
                 ];
         };
 }
