@@ -7,7 +7,6 @@ Super, r -> reloar the Configuration at runtime
 Alt, Enter -> open kitty
 
 Alt, Space -> open rofi
-Alt, Shift, Space -> open wofi
 
 Super, Escape -> Quit mango
 
