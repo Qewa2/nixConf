@@ -42,6 +42,22 @@ It should be done automacally when you rebuild your system with
 sudo nixos-rebuild switch --flake <flake uri>
 ```
 
+## **Updating and rebuilding**
+My config installs nh the nix helper.
+you can rebuild with
+```
+nh os switch <config-path> -H <host>
+```
+Example:
+```
+nh os switch /etc/nixos -H main
+```
+
+You can update and rebuild with:
+```
+nh os switch <config-path> -H <host> --update
+```
+
 ## [TODO](./TODO.md)
 
 
