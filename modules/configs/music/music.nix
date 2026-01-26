@@ -36,10 +36,6 @@ in
                 services.mpd = {
                         enable = true;
                         musicDirectory = "$HOME/Music";
-                        extraConfig = ''
-                                type "pipewire"
-                                name "Pipewire Output"
-                        '';
                 };
         };
 }
