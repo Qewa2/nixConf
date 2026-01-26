@@ -19,7 +19,7 @@ in
                                         -q --no-playlist
 
                                 file=$(ls -t | head -n1)
-                                mv "$file" ~/Music/
+                                mv "$file" /Music/
                         '';
                 };
         };
@@ -35,7 +35,13 @@ in
 
                 services.mpd = {
                         enable = true;
-                        musicDirectory = "$HOME/Music";
+                        musicDirectory = "/Music/";
+
+                        user = "mpd";
+                        group = "audio";
+
+                        network.listenAddress = "any";
+                        network.port = 6600;
                 };
         };
 }

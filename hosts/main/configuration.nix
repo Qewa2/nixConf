@@ -82,7 +82,7 @@
                 isNormalUser = true;
                 description = "Qewa";
                 shell = pkgs.bash;
-                extraGroups = [ "networkmanager" "wheel" "nixos" ];
+                extraGroups = [ "networkmanager" "audio" "wheel" "nixos" ];
         };
 
         home-manager = {
