@@ -28,7 +28,18 @@ in
                 environment.systemPackages = with pkgs; [
                         mpv
                         yt-dlp
-                        cfg.getScript 
+                        ncpamixer
+                        rmpc
+                        cfg.getScript
                 ];
+
+                services.mpd = {
+                        enable = true;
+                        musicDirectory = "$HOME/Music";
+                        extraConfig = ''
+                                type "pipewire"
+                                name "Pipewire Output"
+                        '';
+                };
         };
 }

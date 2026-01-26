@@ -17,10 +17,7 @@
         sysConf = {
                 enable = true;
                 sysBoot.enable = true;
-                sysSound = {
-                        enable = true;
-                        pipewire.enable = true;
-                };
+                sysSound.enable = true;
         };
 
         dotfiles.enableAll = true;
