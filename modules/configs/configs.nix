@@ -6,6 +6,7 @@ in
         imports = [
                 ./nvf/nvf.nix
                 ./lutris/lutris.nix
+                ./music/music.nix
         ];
 
         options.myConfigs = {
@@ -21,6 +22,7 @@ in
 
         config = lib.mkIf cfg.enableAll {
                 myConfigs.nvf.enable = lib.mkDefault true;
+                myConfigs.music.enable = lib.mkDefault true;
                 # myConfigs.lutris.enable = lib.mkDefault true;
         };
 }
