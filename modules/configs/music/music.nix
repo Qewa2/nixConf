@@ -3,15 +3,15 @@ let
         cfg = config.myConfigs.music;
 in
 {
-        options.myConfigs.music = {
-                enable = lib.mkOption {
+        options.myconfigs.music = {
+                enable = lib.mkoption {
                         type = lib.types.bool;
                         default = false;
                 };
-                getScript = lib.mkOption {
+                getscript = lib.mkoption {
                         type = lib.types.package;
-                        readOnly = true;
-                        default = pkgs.writeShellScriptBin "getMusic" ''
+                        readonly = true;
+                        default = pkgs.writeshellscriptbin "getmusic" ''
                                 yt-dlp "ytsearch:$*" \
                                         -x --audio-format mp3 \
                                         -o "%(title)s.%(ext)s" \
@@ -19,40 +19,17 @@ in
                                         -q --no-playlist
 
                                 file=$(ls -t | head -n1)
-                                mv "$file" /Music/
+                                mv "$file" /music/
                         '';
                 };
         };
 
-        config = lib.mkIf cfg.enable {
-                environment.systemPackages = with pkgs; [
-                        mpd
-                        mpc
+        config = lib.mkif cfg.enable {
+                environment.systempackages = with pkgs; [
                         mpv
                         yt-dlp
                         ncpamixer
-                        rmpc
-                        cfg.getScript
+                        cfg.getscript
                 ];
-
-                services.mpd = {
-                        enable = true;
-
-                        user = "mpd";
-                        group = "audio";
-                        
-                        settings = {
-                                music_directory = "/Music/";
-                                bind_to_address = "127.0.0.1";
-                                port = 6600;
-                                
-                                audio_output = [
-                                        {
-                                                type = "pipewire";
-                                                name = "PipeWire";
-                                        }
-                                ];
-                        };
-                };
         };
 }
