@@ -61,10 +61,9 @@
                 #   echo "Hello, ${config.home.username}!"
                 # '')
                 cowsay
-                hyprcursor
-                bibata-cursors
                 discord
                 heroic
+                whatsapp-electron
         ];
 
         # Home Manager is pretty good at managing dotfiles. The primary way to manage
