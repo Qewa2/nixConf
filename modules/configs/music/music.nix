@@ -26,6 +26,8 @@ in
 
         config = lib.mkIf cfg.enable {
                 environment.systemPackages = with pkgs; [
+                        mpd
+                        mpc
                         mpv
                         yt-dlp
                         ncpamixer
@@ -35,13 +37,22 @@ in
 
                 services.mpd = {
                         enable = true;
-                        musicDirectory = "/Music/";
 
                         user = "mpd";
                         group = "audio";
-
-                        network.listenAddress = "any";
-                        network.port = 6600;
+                        
+                        settings = {
+                                music_directory = "/Music/";
+                                bind_to_address = "127.0.0.1";
+                                port = 6600;
+                                
+                                audio_output = [
+                                        {
+                                                type = "pipewire";
+                                                name = "PipeWire";
+                                        }
+                                ];
+                        };
                 };
         };
 }
