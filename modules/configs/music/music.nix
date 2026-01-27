@@ -24,7 +24,7 @@ in
                 };
         };
 
-        config = lib.mkif cfg.enable {
+        config = lib.mkIf cfg.enable {
                 environment.systempackages = with pkgs; [
                         mpv
                         yt-dlp
