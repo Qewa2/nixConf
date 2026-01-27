@@ -4,14 +4,14 @@ let
 in
 {
         options.myConfigs.music = {
-                enable = lib.mkoption {
+                enable = lib.mkOption {
                         type = lib.types.bool;
                         default = false;
                 };
-                getscript = lib.mkoption {
+                getScript = lib.mkOption {
                         type = lib.types.package;
-                        readonly = true;
-                        default = pkgs.writeshellscriptbin "getmusic" ''
+                        readOnly = true;
+                        default = pkgs.writeShellScriptBin "getMusic" ''
                                 yt-dlp "ytsearch:$*" \
                                         -x --audio-format mp3 \
                                         -o "%(title)s.%(ext)s" \
@@ -25,11 +25,11 @@ in
         };
 
         config = lib.mkIf cfg.enable {
-                environment.systempackages = with pkgs; [
+                environment.systemPackages = with pkgs; [
                         mpv
                         yt-dlp
                         ncpamixer
-                        cfg.getscript
+                        cfg.getScript
                 ];
         };
 }
