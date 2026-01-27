@@ -3,7 +3,7 @@ let
         cfg = config.myConfigs.music;
 in
 {
-        options.myconfigs.music = {
+        options.myConfigs.music = {
                 enable = lib.mkoption {
                         type = lib.types.bool;
                         default = false;
