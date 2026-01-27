@@ -3,6 +3,7 @@
 - **Refactor** `hosts/main/configuration.nix` **into Modules**
 - *maybe* **Configure Hyprland**
 - **Look into lf**
+- **add either ewww or quickshell widgets**
 - **Use Flake Parts system instead of regular modules**
 - **Add wofi configs (theme, wallpaper switching)**
 - **switch wofi mentions to rofi**
