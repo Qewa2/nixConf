@@ -2,8 +2,8 @@
 
 - **Refactor** `hosts/main/configuration.nix` **into Modules**
 - *maybe* **Configure Hyprland**
-- **configure rmcp**
-- **reown /Music to the `audio` group and make symlinks from ~/Music to /Music**
+- **Look into lf**
+- **Use Flake Parts system instead of regular modules**
 - **Add wofi configs (theme, wallpaper switching)**
 - **switch wofi mentions to rofi**
 - **use [stylix](https://nix-community.github.io/stylix/index.html)**
