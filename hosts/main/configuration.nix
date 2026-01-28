@@ -47,7 +47,7 @@
         
         stylix = {
                 enable = true;
-                bashe16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
+                base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
         };
 
         # Set your time zone.
