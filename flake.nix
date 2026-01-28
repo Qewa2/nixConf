@@ -9,6 +9,11 @@
                         inputs.nixpkgs.follows = "nixpkgs";
                 };
 
+                stylix = {
+                        url = "github:nix-community/stylix";
+                        inputs.nixpkgs.follows = "nixpkgs";
+                };
+
                 awww.url = "git+https://codeberg.org/LGFae/awww";
                 
                 hyprland.url = "github:hyprwm/Hyprland";
@@ -23,7 +28,7 @@
                 };
         };
 
-        outputs = { self, nixpkgs, nvf, home-manager, mango, ... }@inputs: {
+        outputs = { self, nixpkgs, nvf, home-manager, stylix, mango, ... }@inputs: {
                 nixosConfigurations = {
                         main = nixpkgs.lib.nixosSystem {
                                 specialArgs = { inherit inputs; };
@@ -32,6 +37,7 @@
                                         ./hosts/main/configuration.nix
                                         home-manager.nixosModules.home-manager
                                         nvf.nixosModules.default
+                                        stylix.nixosModules.stylix
                                         mango.nixosModules.mango
                                 ];
                         };

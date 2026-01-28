@@ -44,6 +44,11 @@
         };
 
         nix.settings.experimental-features = [ "nix-command" "flakes" ];
+        
+        stylix = {
+                enable = true;
+                sytlix.bashe16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
+        };
 
         # Set your time zone.
         time.timeZone = "Europe/Berlin";
