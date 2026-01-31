@@ -16,7 +16,6 @@
 
                 awww.url = "git+https://codeberg.org/LGFae/awww";
                 
-                hyprland.url = "github:hyprwm/Hyprland";
                 mango = {
                         url = "github:DreamMaoMao/mango";
                         inputs.nixpkgs.follows = "nixpkgs";
