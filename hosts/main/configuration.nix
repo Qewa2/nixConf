@@ -115,7 +115,6 @@
                 neofetch
                 fastfetch
                 gitFull
-                kitty
                 brave
                 ffmpeg
                 wl-clipboard
