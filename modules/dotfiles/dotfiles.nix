@@ -32,7 +32,7 @@ in
                                 };
                                 
                                 systemPackages = with pkgs; [
-                                        ghossty
+                                        ghostty
                                 ];
                         };
                         programs.mango.enable = lib.mkDefault true;
