@@ -18,7 +18,7 @@
                         style = "dark";
                         transparent = false;
                 };
-                
+
                 visuals = {
                         highlight-undo.enable = true;
                         fidget-nvim.enable = true;
