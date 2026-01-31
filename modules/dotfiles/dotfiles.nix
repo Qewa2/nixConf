@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
         dotfiles = ./.;
         cfg = config.dotfiles;
@@ -26,8 +26,14 @@ in
         
         config = lib.mkIf moduleEnable (lib.mkMerge [
                 (lib.mkIf mangoEnable {
-                        environment.etc = {
+                        environment = {
+                                etc = {
                                 "mango".source = "${dotfiles}/mango";
+                                };
+                                
+                                systemPackages = with pkgs; [
+                                        ghossty
+                                ];
                         };
                         programs.mango.enable = lib.mkDefault true;
                 })
