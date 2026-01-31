@@ -4,7 +4,7 @@ Super, w -> open this help window
 
 Super, r -> reloar the Configuration at runtime
 
-Alt, Enter -> open kitty
+Alt, Enter -> open ghostty
 
 Alt, Space -> open rofi
 
