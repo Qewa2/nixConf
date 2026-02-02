@@ -64,6 +64,8 @@
                 discord
                 heroic
                 whatsapp-electron
+                audible-cli
+                audiobookshelf
         ];
 
         # Home Manager is pretty good at managing dotfiles. The primary way to manage
