@@ -19,7 +19,7 @@ in
                                         -q --no-playlist
 
                                 file=$(ls -t | head -n1)
-                                mv "$file" /music/
+                                mv "$file" $HOME/music/
                         '';
                 };
         };
