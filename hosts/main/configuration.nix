@@ -134,6 +134,11 @@
                 inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
         ];
 
+        services.pairdrop = {
+                enable = true;
+                port = 3000;
+        };
+
         programs.nh = {
                 enable = true;
                 flake = "${config.myConfigs.flake}";
@@ -186,7 +191,7 @@
         services.openssh.enable = true;
 
         # Open ports in the firewall.
-        networking.firewall.allowedTCPPorts = [ 22 ];
+        networking.firewall.allowedTCPPorts = [ 22 3000 ];
         # networking.firewall.allowedUDPPorts = [ ... ];
         # Or disable the firewall altogether.
         # networking.firewall.enable = false;
