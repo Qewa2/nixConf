@@ -1,4 +1,8 @@
 # nixConf
+## **Important**
+**!!! This Branch does not work yet i'm currently rewriting the main branch !!!**
+
+
 ## How do you use my Config?
 To use my config you can just clone it into your `/etc/nixos`
 directory with

@@ -25,8 +25,21 @@
                         url = "github:NotAShelf/nvf";
                         inputs.nixpkgs.follows = "nixpkgs";
                 };
+
+                flake-parts.url = "github:hercules-ci/flake-parts";
+
+                import-tree.url = "github:vic/import-tree";
         };
 
+        outputs = inputs:
+                inputs.flake-parts.lib.mkFlake { inherit inputs; }
+                        (
+                                inputs.import-tree ./modules
+                                inputs.import-tree ./hosts
+                        );
+
+
+        /*
         outputs = { self, nixpkgs, nvf, home-manager, stylix, mango, ... }@inputs: {
                 nixosConfigurations = {
                         main = nixpkgs.lib.nixosSystem {
@@ -49,4 +62,5 @@
                         };
                 };
         };
+        */
 }
