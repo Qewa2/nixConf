@@ -24,7 +24,22 @@
 
         myConfigs.enableAll = true;  
         networking.hostName = "nixos"; # Define your hostname.
-        
+
+        hardware.bluetooth = {
+                enable = true;
+                powerOnBoot = true;
+                settings = {
+                        General = {
+                                Experimental = true;
+                                FastConnectable = true;
+                        };
+                        
+                        Policy = {
+                                AutoEnable = false;
+                        };
+                };
+        };
+
         # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   
         # Configure network proxy if necessary
@@ -116,6 +131,9 @@
                 neofetch
                 fastfetch
                 gitFull
+                lazygit
+                yazi
+                ncdu
                 brave
                 ffmpeg
                 wl-clipboard
@@ -131,6 +149,8 @@
                 lshw
                 fzf
                 unzip
+                bluetui
+                impala
                 inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
         ];
 
