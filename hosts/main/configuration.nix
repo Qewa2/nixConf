@@ -131,6 +131,8 @@
                 neofetch
                 fastfetch
                 gitFull
+                lazygit
+                ncdu
                 brave
                 ffmpeg
                 wl-clipboard
