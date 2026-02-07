@@ -28,7 +28,7 @@ in
                 environment.systemPackages = with pkgs; [
                         mpv
                         yt-dlp
-                        ncpamixer
+                        wiremix
                         cfg.getScript
                 ];
         };
