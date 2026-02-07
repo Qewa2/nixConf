@@ -132,6 +132,7 @@
                 fastfetch
                 gitFull
                 lazygit
+                yazi
                 ncdu
                 brave
                 ffmpeg
