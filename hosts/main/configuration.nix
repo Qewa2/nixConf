@@ -146,6 +146,8 @@
                 lshw
                 fzf
                 unzip
+                bluetui
+                impala
                 inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
         ];
 
