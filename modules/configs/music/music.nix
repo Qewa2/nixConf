@@ -13,7 +13,7 @@ in
                         readOnly = true;
                         default = pkgs.writeShellScriptBin "getMusic" ''
                                 yt-dlp "ytsearch:$*" \
-                                        -x --audio-format mp3 \
+                                        -x --audio-format wav \
                                         -o "%(title)s.%(ext)s" \
                                         -f bestaudio \
                                         -q --no-playlist

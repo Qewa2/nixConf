@@ -23,7 +23,6 @@
         dotfiles.enableAll = true;
 
         myConfigs.enableAll = true;  
-        networking.hostName = "nixos"; # Define your hostname.
 
         hardware.bluetooth = {
                 enable = true;
@@ -46,9 +45,14 @@
         # networking.proxy.default = "http://user:password@proxy:port/";
         # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+        networking.hostName = "nixos"; # Define your hostname
+
         # Enable networking
         networking.networkmanager.enable = true;
-  
+        networking.networkmanager.wifi.backend = "iwd";
+        networking.wireless.iwd.enable = true;
+        systemd.services.iwd.wantedBy = [ "multi-user.target" ];
+
         system.activationScripts.NixOsPermissions = {
                 text = ''
                         chown root:nixos /etc/nixos
