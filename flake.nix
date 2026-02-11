@@ -33,11 +33,7 @@
 
         outputs = inputs:
                 inputs.flake-parts.lib.mkFlake { inherit inputs; }
-                        (
-                                inputs.import-tree ./modules
-                                inputs.import-tree ./hosts
-                        );
-
+                                (inputs.import-tree ./modules);
 
         /*
         outputs = { self, nixpkgs, nvf, home-manager, stylix, mango, ... }@inputs: {

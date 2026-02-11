@@ -1,7 +1,11 @@
-{ inputs, ... }: {
+{ inputs, self, ... }: {
         flake.nixosConfigurations.main = inputs.nixpkgs.lib.nixosSystem {
                 modules = [
-                
+                        self.nixosModules.mainModule
+                        self.home-manager.nixosModules.default
+                        self.stylix.nixosModules.stylix
+                        self.mango.nixosModules.mango
+                        ./hardware
                 ];
         };
 
