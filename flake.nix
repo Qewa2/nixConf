@@ -34,29 +34,4 @@
         outputs = inputs:
                 inputs.flake-parts.lib.mkFlake { inherit inputs; }
                                 (inputs.import-tree ./modules);
-
-        /*
-        outputs = { self, nixpkgs, nvf, home-manager, stylix, mango, ... }@inputs: {
-                nixosConfigurations = {
-                        main = nixpkgs.lib.nixosSystem {
-                                specialArgs = { inherit inputs; };
-                                system = "x86_64-linux";
-                                modules = [
-                                        ./hosts/main/configuration.nix
-                                        home-manager.nixosModules.home-manager
-                                        nvf.nixosModules.default
-                                        stylix.nixosModules.stylix
-                                        mango.nixosModules.mango
-                                ];
-                        };
-                        tailsNix = nixpkgs.lib.nixosSystem {
-                                specialArgs = { inherit inputs; };
-				system = "x86_64-linux";
-				modules = [
-					./hosts/tailsNix/configuration.nix
-				];
-                        };
-                };
-        };
-        */
 }
