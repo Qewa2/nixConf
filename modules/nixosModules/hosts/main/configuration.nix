@@ -1,7 +1,7 @@
 { inputs, self, ... }: {
         flake.nixosConfigurations.main = inputs.nixpkgs.lib.nixosSystem {
                 modules = [
-                        self.nixosModules.mainModule
+                        self.nixosModules.main
                         self.home-manager.nixosModules.default
                         self.stylix.nixosModules.stylix
                         self.mango.nixosModules.mango
@@ -9,16 +9,11 @@
                 ];
         };
 
-        flake.nixosModules.mainModule = { inputs, pkgs, ... }: {
+        flake.nixosModules.main = { inputs, self, pkgs, ... }: {
                 imports = [
                         inputs.home-manager.nixosModules.default
+                        self.nixosModules.base
                 ];
-                
-                sysConf = {
-                        enable = true;
-                        sysBoot.enable = true;
-                        sysSound.enable = true;
-                };
 
                 dotfiles.enableAll = true;
 
