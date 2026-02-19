@@ -5,11 +5,11 @@
                         self.home-manager.nixosModules.default
                         self.stylix.nixosModules.stylix
                         self.mango.nixosModules.mango
-                        ./hardware
+                        ./hardware-configuration.nix
                 ];
         };
 
-        flake.nixosModules.mainModule = { inputs, pkgs, config, ... }: {
+        flake.nixosModules.mainModule = { inputs, pkgs, ... }: {
                 imports = [
                         inputs.home-manager.nixosModules.default
                 ];
