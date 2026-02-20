@@ -13,26 +13,12 @@
                 imports = [
                         inputs.home-manager.nixosModules.default
                         self.nixosModules.base
+                        self.nixosModules.extra.bluetooth
                 ];
 
                 dotfiles.enableAll = true;
 
                 myConfigs.enableAll = true;
-
-                hardware.bluetooth = {
-                        enable = true;
-                        powerOnBoot = true;
-                        settings = {
-                                General = {
-                                        Experimental = true;
-                                        FastConnectable = true;
-                                };
-
-                                Policy = {
-                                        AutoEnable = false;
-                                };
-                        };
-                };
 
                 networking = {
                         hostName = "nixos";
@@ -135,7 +121,6 @@
                         lshw
                         fzf
                         unzip
-                        bluetui
                         impala
                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                 ];
