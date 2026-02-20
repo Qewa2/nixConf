@@ -15,6 +15,7 @@
                         self.nixosModules.base
                         self.nixosModules.extra.bluetooth
                         self.nixosModules.extra.wifi
+                        self.nixosModules.features.gaming
                 ];
 
                 dotfiles.enableAll = true;
@@ -97,15 +98,6 @@
                 services.pairdrop = {
                         enable = true;
                         port = 3000;
-                };
-
-                programs.nh.enable = true;
-
-                programs.steam = {
-                        enable = true;
-                        remotePlay.openFirewall = true;
-                        dedicatedServer.openFirewall = true;
-                        localNetworkGameTransfers.openFirewall = true;
                 };
 
                 boot.plymouth.enable = true;
