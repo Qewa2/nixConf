@@ -14,22 +14,14 @@
                         inputs.home-manager.nixosModules.default
                         self.nixosModules.base
                         self.nixosModules.extra.bluetooth
+                        self.nixosModules.extra.wifi
                 ];
 
                 dotfiles.enableAll = true;
 
                 myConfigs.enableAll = true;
 
-                networking = {
-                        hostName = "nixos";
-                        networkmanager = {
-                                enable = true;
-                                wifi.backend = "iwd";
-                        };
-                        wireless.iwd.enable = true;
-                };
-
-                systemd.services.iwd.wantedBy = [ "multi-user.target" ];
+                networking.hostName = "nixos";
 
                 system.activationScripts.NixOsPermissions = {
                         text = ''
@@ -121,7 +113,6 @@
                         lshw
                         fzf
                         unzip
-                        impala
                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                 ];
 
