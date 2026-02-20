@@ -23,8 +23,6 @@
 
                 networking.hostName = "nixos";
 
-                nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
                 stylix = {
                         enable = true;
                         autoEnable = true;
@@ -70,11 +68,6 @@
                         users = {
                                 qewa = ./home.nix;
                         };
-                };
-
-                nixpkgs.config = {
-                        allowUnfree = true;
-                        allowUnfreePredicate = (_: true);
                 };
 
                 environment.systemPackages = with pkgs; [
