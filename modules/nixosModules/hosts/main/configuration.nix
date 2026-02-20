@@ -23,19 +23,6 @@
 
                 networking.hostName = "nixos";
 
-                system.activationScripts.NixOsPermissions = {
-                        text = ''
-                                chown root:nixos /etc/nixos
-                                find /etc/nixos -exec chown root:nixos {} +
-                                find /etc/nixos -type d -exec chmod -R 774 {} +
-                                find /etc/nixos -type f -exec chmod -R 664 {} +
-                        '';
-                };
-
-                systemd.tmpfiles.rules = [
-                        "d /etc/nixos 0775 root nixos -"
-                ];
-
                 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
                 stylix = {
@@ -68,8 +55,6 @@
                 };
 
                 console.keyMap = "de";
-
-                users.groups.nixos.gid = 991;
 
                 users.users.qewa = {
                         isNormalUser = true;
