@@ -72,26 +72,15 @@
                 };
 
                 environment.systemPackages = with pkgs; [
-                        btop
-                        neofetch
-                        fastfetch
-                        gitFull
                         lazygit
                         yazi
                         ncdu
                         brave
-                        ffmpeg
                         wl-clipboard
                         rofi
                         pavucontrol
-                        tree
-                        bash
-                        sudo
                         hyprcursor
                         bibata-cursors
-                        lshw
-                        fzf
-                        unzip
                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                 ];
 
