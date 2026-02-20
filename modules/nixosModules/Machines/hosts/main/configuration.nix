@@ -16,6 +16,7 @@
                         self.nixosModules.extra.bluetooth
                         self.nixosModules.extra.wifi
                         self.nixosModules.features.gaming
+                        self.nixosModules.users.qewa
                 ];
 
                 dotfiles.enableAll = true;
@@ -54,22 +55,6 @@
                 };
 
                 console.keyMap = "de";
-
-                users.users.qewa = {
-                        isNormalUser = true;
-                        description = "Qewa";
-                        shell = pkgs.bash;
-                        extraGroups = [ "networkmanager" "audio" "wheel" "nixos" ];
-                };
-
-                home-manager = {
-                        extraSpecialArgs = { inherit inputs; };
-                        useGlobalPkgs = true;
-                        useUserPackages = true;
-                        users = {
-                                qewa = ./home.nix;
-                        };
-                };
 
                 environment.systemPackages = with pkgs; [
                         lazygit
