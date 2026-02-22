@@ -1,5 +1,5 @@
 {
-        flake.nixosModules.base = { lib, pkgs, ... }: {
+        flake.nixosModules.base = { lib, ... }: {
                 nix.settings.experimental-features = [ "nix-command" "flakes" ];
                 nixpkgs.config = {
                         allowUnfree = true;
@@ -14,19 +14,5 @@
 
                         gnupg.agent.enable = true;
                 };
-
-                environment.systemPackages = with pkgs; [
-                        fzf
-                        btop
-                        fastfetch
-                        neofetch
-                        ffmpeg
-                        sudo
-                        lshw
-                        unzip
-                        bash
-                        tree
-                        gitFull
-                ];
         };
 }
