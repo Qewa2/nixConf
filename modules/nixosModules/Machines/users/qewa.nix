@@ -1,5 +1,8 @@
-{
-        flake.nixosModules.users.qewa = { pkgs, ... }: {
+{ inputs, ... }: {
+        flake.nixosModules.users.qewa = { inputs, pkgs, ... }: {
+                imports = [
+                        inputs.home-manager.nixosModules.default
+                ];
                 users.users.qewa = {
                         isNormalUser = true;
                         description = "Qewa";

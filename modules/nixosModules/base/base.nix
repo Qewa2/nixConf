@@ -6,9 +6,13 @@
                         allowUnfreePredicate = _: true;
                 };
 
-                programs.nh = {
-                        enable = true;
-                        flake = lib.mkDefault "/etc/nixos";
+                programs = {
+                        nh = {
+                                enable = true;
+                                flake = lib.mkDefault "/etc/nixos";
+                        };
+
+                        gnupg.agent.enable = true;
                 };
 
                 environment.systemPackages = with pkgs; [

@@ -11,10 +11,10 @@
 
         flake.nixosModules.main = { inputs, self, pkgs, ... }: {
                 imports = [
-                        inputs.home-manager.nixosModules.default
                         self.nixosModules.base
                         self.nixosModules.extra.bluetooth
                         self.nixosModules.extra.wifi
+                        self.nixosModules.extra.ssh
                         self.nixosModules.features.gaming
                         self.nixosModules.users.qewa
                 ];
@@ -102,14 +102,7 @@
                 };
 
                 programs.mtr.enable = true;
-                programs.gnupg.agent = {
-                        enable = true;
-                        enableSSHSupport = true;
-                };
-
-                services.openssh.enable = true;
-
-                networking.firewall.allowedTCPPorts = [ 22 3000 ];
+                networking.firewall.allowedTCPPorts = [ 3000 ];
                 system.stateVersion = "25.11";
         };
 }
