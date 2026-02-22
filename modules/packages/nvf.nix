@@ -35,7 +35,7 @@
                                                                         enable = true;
                                                                         show_on_dirs = false;
                                                                 };
-                                                                
+
                                                                 filesystem_watchers = {
                                                                         enable = true;
                                                                         debounce_delay = 50;
@@ -63,6 +63,8 @@
                                                         };
                                                         hardtime-nvim.enable = true;
                                                 };
+
+                                                autopairs.nvim-autopairs.enable = true;
 
                                                 autocomplete = {
                                                         blimk-cmp.enable = true;
