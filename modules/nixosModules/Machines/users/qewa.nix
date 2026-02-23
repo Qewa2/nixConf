@@ -25,9 +25,13 @@
 
                                 git = {
                                         enable = true;
+
                                         settings = {
-                                                name = "Qewa2";
-                                                email = "quinn.schubert@icloud.com";
+                                                user = {
+                                                        name = "Qewa2";
+                                                        email = "quinn.schubert@icloud.com";
+                                                };
+
                                                 safe.directory = "/etc/nixos";
                                                 init.defaultBranch = "main";
                                         };
