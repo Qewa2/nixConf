@@ -9,14 +9,14 @@
                 ];
         };
 
-        flake.nixosModules.main = { inputs, self, pkgs, ... }: {
+        flake.nixosModules.main = { pkgs, ... }: {
                 imports = [
                         self.nixosModules.base
-                        self.nixosModules.extra.bluetooth
-                        self.nixosModules.extra.wifi
-                        self.nixosModules.extra.ssh
-                        self.nixosModules.features.gaming
-                        self.nixosModules.users.qewa
+                        self.nixosModules.bluetooth
+                        self.nixosModules.wifi
+                        self.nixosModules.ssh
+                        self.nixosModules.gaming
+                        self.nixosModules.qewa
                 ];
 
                 dotfiles.enableAll = true;

@@ -1,5 +1,5 @@
 { ... }: {
-        flake.nixosModules.extra.wifi = { lib, pkgs, ... }: {
+        flake.nixosModules.wifi = { lib, pkgs, ... }: {
                 networking = {
                         hostName = lib.mkDefault "nixos";
                         networkmanager = {
