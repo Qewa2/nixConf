@@ -68,7 +68,6 @@
 
                                                 autocomplete = {
                                                         blink-cmp.enable = true;
-                                                        nvim-cmp.enable = true;
                                                         enableSharedCmpSources = true;
                                                 };
 
