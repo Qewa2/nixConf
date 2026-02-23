@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
         perSystem = { pkgs, ... }: {
                 packages.myNvim = (inputs.nvf.lib.neovimConfiguration {
                         inherit pkgs;
