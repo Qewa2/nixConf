@@ -67,7 +67,7 @@
                                                 autopairs.nvim-autopairs.enable = true;
 
                                                 autocomplete = {
-                                                        blimk-cmp.enable = true;
+                                                        blink-cmp.enable = true;
                                                         nvim-cmp.enable = true;
                                                         enableSharedCmpSources = true;
                                                 };
