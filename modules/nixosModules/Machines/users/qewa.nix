@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-        flake.nixosModules.users.qewa = { pkgs, ... }: {
+{
+        flake.nixosModules.users.qewa = { inputs, pkgs, ... }: {
                 imports = [
                         inputs.home-manager.nixosModules.default
                 ];
