@@ -5,7 +5,7 @@
                         self.home-manager.nixosModules.default
                         self.stylix.nixosModules.stylix
                         self.mango.nixosModules.mango
-                        ./hardware-configuration.nix
+                        self.nixosModules.main-hardware
                 ];
         };
 
