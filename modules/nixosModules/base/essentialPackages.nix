@@ -12,6 +12,7 @@
                         bash
                         tree
                         gitFull
+                        self.packages.${pkgs.system}.myNvim
                 ];
         };
 } 
