@@ -1,8 +1,5 @@
 {
         flake.nixosModules.qewa = { inputs, pkgs, ... }: {
-                imports = [
-                        inputs.home-manager.nixosModules.default
-                ];
                 users.users.qewa = {
                         isNormalUser = true;
                         description = "Qewa";
@@ -31,9 +28,9 @@
                                         settings = {
                                                 name = "Qewa2";
                                                 email = "quinn.schubert@icloud.com";
+                                                safe.directory = "/etc/nixos";
+                                                init.defaultBranch = "main";
                                         };
-                                        safe.directory = "/etc/nixos";
-                                        init.defaultBranch = "main";
                                 };
                         };
                 };

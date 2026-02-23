@@ -1,6 +1,6 @@
 {
         flake.nixosModules.ssh = {
-                programs.gnupg = {
+                programs.gnupg.agent = {
                         enable = true;
                         enableSSHSupport = true;
                 };

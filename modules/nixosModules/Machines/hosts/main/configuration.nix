@@ -2,10 +2,10 @@
         flake.nixosConfigurations.main = inputs.nixpkgs.lib.nixosSystem {
                 modules = [
                         self.nixosModules.main
-                        self.home-manager.nixosModules.default
-                        self.stylix.nixosModules.stylix
-                        self.mango.nixosModules.mango
                         self.nixosModules.main-hardware
+                        inputs.home-manager.nixosModules.default
+                        inputs.stylix.nixosModules.stylix
+                        inputs.mango.nixosModules.mango
                 ];
         };
 
@@ -19,9 +19,9 @@
                         self.nixosModules.qewa
                 ];
 
-                dotfiles.enableAll = true;
+                # dotfiles.enableAll = true;
 
-                myConfigs.enableAll = true;
+                # myConfigs.enableAll = true;
 
                 networking.hostName = "nixos";
 
