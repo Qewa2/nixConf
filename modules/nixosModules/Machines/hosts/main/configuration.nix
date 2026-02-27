@@ -73,6 +73,8 @@
 
                 boot.plymouth.enable = true;
 
+                programs.mango.enable = true;
+
                 hardware.graphics.enable = true;
                 services.xserver.videoDrivers = [ "nvidia" ];
                 hardware.nvidia = {
