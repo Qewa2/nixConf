@@ -24,6 +24,7 @@
 
                                                 filetree.nvimTree = {
                                                         enable = true;
+                                                        openOnSetup = false;
                                                         setupOpts = {
                                                                 actions.open_file = {
                                                                         eject = true;
