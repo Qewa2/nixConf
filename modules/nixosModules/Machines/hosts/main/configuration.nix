@@ -16,12 +16,9 @@
                         self.nixosModules.wifi
                         self.nixosModules.ssh
                         self.nixosModules.gaming
+                        self.nixosModules.music
                         self.nixosModules.qewa
                 ];
-
-                # dotfiles.enableAll = true;
-
-                # myConfigs.enableAll = true;
 
                 networking.hostName = "nixos";
 
