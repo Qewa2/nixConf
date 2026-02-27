@@ -12,9 +12,21 @@
                                 username = "qewa";
                                 homeDirectory = "/home/qewa";
                                 stateVersion = "25.11";
+                                packages = with pkgs; [
+                                        ghostty
+                                        cowsay
+                                        discord
+                                        whatsapp-electron
+                                        audible-cli
+                                ];
+
+                                file = {
+                                        ".config/mango".source = ./mango;
+                                };
                         };
 
                         programs = {
+                                home-manager.enable = true;
                                 btop = {
                                         enable = true;
                                         settings = {
