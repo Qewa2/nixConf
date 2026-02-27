@@ -17,17 +17,12 @@
                         self.nixosModules.ssh
                         self.nixosModuels.pairdrop
                         self.nixosModules.gaming
+                        self.nixosModules.styling
                         self.nixosModules.music
                         self.nixosModules.qewa
                 ];
 
                 networking.hostName = "nixos";
-
-                stylix = {
-                        enable = true;
-                        autoEnable = true;
-                        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
-                };
 
                 time.timeZone = "Europe/Berlin";
 
