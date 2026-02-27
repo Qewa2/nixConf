@@ -15,6 +15,7 @@
                         self.nixosModules.bluetooth
                         self.nixosModules.wifi
                         self.nixosModules.ssh
+                        self.nixosModuels.pairdrop
                         self.nixosModules.gaming
                         self.nixosModules.music
                         self.nixosModules.qewa
@@ -66,11 +67,6 @@
                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                 ];
 
-                services.pairdrop = {
-                        enable = true;
-                        port = 3000;
-                };
-
                 boot.plymouth.enable = true;
 
                 programs.mango.enable = true;
@@ -101,7 +97,6 @@
                 };
 
                 programs.mtr.enable = true;
-                networking.firewall.allowedTCPPorts = [ 3000 ];
                 system.stateVersion = "25.11";
         };
 }
