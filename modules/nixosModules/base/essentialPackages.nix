@@ -13,7 +13,7 @@
                         tree
                         gitFull
                         coreutils-full
-                        self.packages.${pkgs.system}.myNvim
+                        self.packages.${pkgs.stdenv.hostPlatform.system}.myNvim
                 ];
         };
 } 
