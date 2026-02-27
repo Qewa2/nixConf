@@ -15,7 +15,7 @@
                         self.nixosModules.bluetooth
                         self.nixosModules.wifi
                         self.nixosModules.ssh
-                        self.nixosModuels.pairdrop
+                        self.nixosModules.pairdrop
                         self.nixosModules.gaming
                         self.nixosModules.styling
                         self.nixosModules.music
