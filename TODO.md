@@ -1,6 +1,5 @@
 # TODO LIST
-
-- **Refactor** `hosts/main/configuration.nix` **into Modules**
+- **Create a mango module**
 - **Look into lf**
 - **add either ewww or quickshell widgets**
 - **Use Flake Parts system instead of regular modules**

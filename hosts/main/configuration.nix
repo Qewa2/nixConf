@@ -48,7 +48,7 @@
         networking.hostName = "nixos"; # Define your hostname
 
         # Enable networking
-        networking.networkmanager.enable = false;
+        networking.networkmanager.enable = true;
         networking.networkmanager.wifi.backend = "iwd";
         networking.wireless.iwd.enable = true;
         systemd.services.iwd.wantedBy = [ "multi-user.target" ];
