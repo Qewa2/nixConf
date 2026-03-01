@@ -25,6 +25,28 @@
                                 };
                         };
 
+                        stylix = {
+                                enable = true;
+                                targets = {
+                                        rofi = {
+                                                enable = true;
+                                                colors.enable = true;
+                                        };
+                                        ghostty = {
+                                                enable = true;
+                                                colors.enable = true;
+                                        };
+                                        yazi = {
+                                                enable = true;
+                                                colors.enable = true;
+                                        };
+                                        lazygit = {
+                                                enable = true;
+                                                colors.enable = true;
+                                        };
+                                };
+                        };
+
                         programs = {
                                 home-manager.enable = true;
                                 btop = {

@@ -1,5 +1,5 @@
-{
-        flake.nixosModules.base = { inputs, ... }: {
+{ inputs, ... }:{
+        flake.nixosModules.base = {
                 home-manager = {
                         extraSpecialArgs = { inherit inputs; };
                         useGlobalPkgs = true;
