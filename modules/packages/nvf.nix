@@ -16,6 +16,10 @@
                                                         registers = "unnamedplus";
                                                 };
 
+                                                theme = {
+                                                        enable = true;
+                                                };
+
                                                 visuals = {
                                                         highlight-undo.enable = true;
                                                         fidget-nvim.enable = true;
