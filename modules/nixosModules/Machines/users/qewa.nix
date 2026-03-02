@@ -15,7 +15,8 @@
                                 packages = with pkgs; [
                                         ghostty
                                         cowsay
-                                        discord
+                                        vesktop
+                                        vencord
                                         whatsapp-electron
                                         audible-cli
                                 ];
