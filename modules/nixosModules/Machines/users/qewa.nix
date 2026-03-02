@@ -16,7 +16,6 @@
                                         ghostty
                                         cowsay
                                         vesktop
-                                        vencord
                                         whatsapp-electron
                                         audible-cli
                                 ];
