@@ -64,7 +64,10 @@
 
                 boot.plymouth.enable = true;
 
-                programs.mango.enable = true;
+                programs = {
+                        mango.enable = true;
+                        nh.flake = "/home/qewa/git/nixConf";
+                };
 
                 hardware.graphics.enable = true;
                 services.xserver.videoDrivers = [ "nvidia" ];
