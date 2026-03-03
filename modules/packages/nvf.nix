@@ -16,6 +16,15 @@
                                                         registers = "unnamedplus";
                                                 };
 
+                                                git = {
+                                                        enable = true;
+                                                        git-conflict.enable = true;
+                                                        gitlinker-nvim.enable = true;
+                                                        gitsigns.enable = true;
+                                                        hunk-nvim.enable = true;
+                                                        neogit.enable = true;
+                                                };
+
                                                 theme = {
                                                         enable = true;
                                                 };
@@ -44,6 +53,12 @@
                                                                 filesystem_watchers = {
                                                                         enable = true;
                                                                         debounce_delay = 50;
+                                                                };
+
+                                                                git = {
+                                                                        enable = true;
+                                                                        show_on_dirs = true;
+                                                                        show_on_open_dirs = true;
                                                                 };
                                                         };
                                                 };
