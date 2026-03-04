@@ -1,4 +1,4 @@
-{ ... }: {
+{
         /*
                 This module implements a user grou to witch you can add your user.
                 If your user is part of the group you can edit and change the files in /etc/nixos
