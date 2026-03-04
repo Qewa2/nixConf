@@ -4,7 +4,6 @@
                         fzf
                         btop
                         fastfetch
-                        neofetch
                         ffmpeg
                         sudo
                         lshw
@@ -15,5 +14,10 @@
                         coreutils-full
                         self.packages.${pkgs.stdenv.hostPlatform.system}.myNvim
                 ];
+
+                programs = {
+                        yazi.enable = true;
+                        lazygit.enable = true;
+                };
         };
 } 

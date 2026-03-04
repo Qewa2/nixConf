@@ -50,8 +50,6 @@
                 console.keyMap = "de";
 
                 environment.systemPackages = with pkgs; [
-                        lazygit
-                        yazi
                         ncdu
                         brave
                         wl-clipboard

@@ -13,9 +13,7 @@
                                 homeDirectory = "/home/qewa";
                                 stateVersion = "25.11";
                                 packages = with pkgs; [
-                                        ghostty
                                         cowsay
-                                        vesktop
                                         whatsapp-electron
                                         audible-cli
                                 ];
@@ -33,23 +31,12 @@
                                 targets = {
                                         rofi = {
                                                 enable = true;
-                                                colors.enable = true;
                                         };
                                         ghostty = {
-                                                enable = true;
-                                                colors.enable = true;
-                                        };
-                                        yazi = {
-                                                enable = true;
-                                                colors.enable = true;
-                                        };
-                                        lazygit = {
-                                                enable = true;
-                                                colors.enable = true;
+                                                enable = false;
                                         };
                                         vesktop = {
                                                 enable = true;
-                                                colors.enable = true;
                                         };
                                 };
                         };
@@ -63,6 +50,12 @@
                                                 update_ms = 100;
                                         };
                                 };
+
+                                ghostty.enable = true;
+                                vesktop.enable = true;
+                                rofi.enable = true;
+                                yazi.enable = true;
+                                lazygit.enable = true;
 
                                 git = {
                                         enable = true;
