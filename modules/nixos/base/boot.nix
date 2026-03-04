@@ -1,4 +1,4 @@
-{ ... }: {
+{
         flake.nixosModules.base = { pkgs, config, ... }:
                 let
                         bootScript = pkgs.writeShellScript "greetd-boot" ''

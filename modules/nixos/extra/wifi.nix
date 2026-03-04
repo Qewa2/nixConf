@@ -1,4 +1,4 @@
-{ ... }: {
+{
         flake.nixosModules.wifi = { lib, pkgs, ... }: {
                 networking = {
                         hostName = lib.mkDefault "nixos";

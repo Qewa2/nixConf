@@ -6,7 +6,7 @@
                 this also makes sure that you don't need to login to git when pushing your /etc/nixos
                 directory
         */
-        flake.nixosModules.base = { ... }: {
+        flake.nixosModules.base = {
                 users.groups.nixos.gid = 991;
                 system.activationScripts.NixOsPermissions = {
                         text = ''

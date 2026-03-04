@@ -1,4 +1,4 @@
-{ ... }: {
+{
         flake.nixosModules.base = { lib, ... }: {
                 security.rtkit.enable = true;
                 services = {
