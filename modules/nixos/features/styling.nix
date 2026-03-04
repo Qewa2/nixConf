@@ -1,9 +1,9 @@
 {
-        flake.nixosModules.styling = { pkgs, ... }: {
+        flake.nixosModules.styling = { pkgs, lib, ... }: {
                  stylix = {
                         enable = true;
-                        autoEnable = true;
-                        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
+                        autoEnable = lib.mkDefault true;
+                        base16Scheme = lib.mkDefault"${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
                 };
         };
 }
