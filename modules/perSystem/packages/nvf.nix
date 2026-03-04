@@ -40,6 +40,8 @@
                                                         indent-blankline.enable = true;
                                                 };
 
+                                                utility.undotree.enable = true;
+
                                                 filetree.nvimTree = {
                                                         enable = true;
                                                         openOnSetup = false;
