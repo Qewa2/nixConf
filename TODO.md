@@ -1,4 +1,5 @@
 # TODO LIST
+- **Restructure `modules/Machines/users/qewa` into modules**
 - **Look into impermanence**
 - **add either ewww or quickshell widgets**
 - **maybe add USB Stick config for tailsOS like use**

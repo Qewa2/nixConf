@@ -1,30 +1,27 @@
 # nixConf
 
 ## How do you use my Config?
-To use my config you can just clone it into your `/etc/nixos`
-directory with
+To use my config you can just clone it with
 ```
-sudo git clone https://github.com/Qewa2/nixConf.git
+git clone https://github.com/Qewa2/nixConf.git
 ```
 **However** this does **NOT** activate it 
 To use it you should
-**1.** add a new host in `flake.nix` and use the modules in the
-`modules` in a new configuration file or
-**2.** copy your generated `hardware-configuration.nix` file into
-`hosts/main/` and edit the `configuration.nix` and `home.nix` files
-to your liking
+**1.** add a new host as a module like with my `main` host and create new module
+for your host and your preferences and user just like with `qewa`
+
+**2.** Create a module for yor hardware configuration.
+I usually name mine with `hostname` + `'-hardware'`
 
 ## Activating the config
 to activate the Config you just have to run this command:
 ```
-sudo nixos-rebuild switch --flake /etc/nixos/#main
+sudo nixos-rebuild switch --flake <flake path>#<config name>
 ```
-or
+in my case it would be:
 ```
-sudo nixo-rebuild switch --flake /etc/nixos/#main --upgrade
+sudo nixos-rebuild switch --flake ~/git/nixConf#main
 ```
-**Beware** that `/etc/nixos#main` is the `uri` to your flake
-e.g. `/etc/nixos/#workstation`
 
 ## Home-manager
 Homa-manager is installed as a nixos-module witch makes it a Part
@@ -45,19 +42,23 @@ sudo nixos-rebuild switch --flake <flake uri>
 
 ## **Updating and rebuilding**
 My config installs nh the nix helper.
-you can rebuild with
+So you can just rebuild with
 ```
-nh os switch <config-path> -H <host>
+nh os switch <config-path> -H <config name>
 ```
 Example:
 ```
 nh os switch /etc/nixos -H main
 ```
 
-You can update and rebuild with:
+i set the default flake path of nh to `/etc/nixos` so if you have your
+config there you can just run
 ```
-nh os switch <config-path> -H <host> --update
+nh os switch -H <config name>
 ```
+or you can set the nh flake path to something else in your configuration
+and you can still run this command
+
 
 ## [TODO](./TODO.md)
 
