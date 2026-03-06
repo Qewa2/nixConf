@@ -39,7 +39,7 @@
                                         };
                                 };
 
-                                ghostty.enable = true;
+                                kitty.enable = true;
                                 vesktop.enable = true;
                                 rofi.enable = true;
                                 yazi.enable = true;
