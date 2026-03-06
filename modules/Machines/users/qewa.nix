@@ -27,17 +27,6 @@
                                 enable = true;
                                 autoEnable = true;
                                 polarity = "dark";
-                                targets = {
-                                        rofi = {
-                                                enable = true;
-                                        };
-                                        ghostty = {
-                                                enable = false;
-                                        };
-                                        vesktop = {
-                                                enable = true;
-                                        };
-                                };
                         };
 
                         programs = {
