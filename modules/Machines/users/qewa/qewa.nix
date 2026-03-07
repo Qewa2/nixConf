@@ -1,5 +1,5 @@
-{
-        flake.nixosModules.qewa = { inputs, pkgs, ... }: {
+{ self, ... }: {
+        flake.nixosModules.qewa = { pkgs, ... }: {
                 users.users.qewa = {
                         isNormalUser = true;
                         description = "Qewa";
@@ -8,13 +8,19 @@
                 };
                 
                 home-manager.users.qewa = { pkgs, ... }: {
+                        imports = [
+                                self.hmModules.base
+
+                                self.hmModules.btop
+                                self.hmModules.whatsapp-electron
+                        ];
+
                         home = {
                                 username = "qewa";
                                 homeDirectory = "/home/qewa";
                                 stateVersion = "25.11";
                                 packages = with pkgs; [
                                         cowsay
-                                        whatsapp-electron
                                         audible-cli
                                 ];
 
@@ -30,15 +36,6 @@
                         };
 
                         programs = {
-                                home-manager.enable = true;
-                                btop = {
-                                        enable = true;
-                                        settings = {
-                                                vim_keys = true;
-                                                update_ms = 100;
-                                        };
-                                };
-
                                 kitty.enable = true;
                                 vesktop.enable = true;
                                 rofi.enable = true;
