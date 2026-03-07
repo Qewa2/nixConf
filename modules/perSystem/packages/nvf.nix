@@ -112,6 +112,14 @@
                                                                 };
                                                         };
                                                 };
+
+                                                keymaps = [
+                                                        {
+                                                                key = "<leader>u";
+                                                                mode = "n";
+                                                                action = ":UndotreeToggle<CR>";
+                                                        }
+                                                ];
                                         };
                                 }
                         ];
