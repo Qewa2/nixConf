@@ -117,6 +117,7 @@
                                                         {
                                                                 key = "<leader>u";
                                                                 mode = "n";
+                                                                silent = true;
                                                                 action = ":UndotreeToggle<CR>";
                                                         }
                                                 ];
