@@ -9,10 +9,9 @@
                 
                 home-manager.users.qewa = { pkgs, ... }: {
                         imports = [
-                                self.hmModules.base
+                                self.homeManagerModules.base
 
-                                self.hmModules.btop
-                                self.hmModules.whatsapp-electron
+                                self.homeManagerModules.btop
                         ];
 
                         home = {
@@ -22,6 +21,7 @@
                                 packages = with pkgs; [
                                         cowsay
                                         audible-cli
+                                        whatsapp-electron
                                 ];
 
                                 file = {
