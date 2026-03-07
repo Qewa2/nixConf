@@ -1,5 +1,5 @@
 { inputs, ... }: {
-        perSystem = { pkgs, ... }: {
+        perSystem = { pkgs, lib, ... }: {
                 packages.myNvim = (inputs.nvf.lib.neovimConfiguration {
                         inherit pkgs;
                         modules = [
@@ -66,6 +66,23 @@
                                                                         enable = true;
                                                                         show_on_dirs = true;
                                                                         show_on_open_dirs = true;
+                                                                };
+
+                                                                renderer = {
+                                                                        special_files = [
+                                                                                "Cargo.toml"
+                                                                                "README.md"
+                                                                                "readme.md"
+                                                                                "Makefile"
+                                                                                "MAKEFILE"
+                                                                                "flake.nix"
+                                                                                "LICENSE"
+                                                                                "LICENSE.md"
+                                                                                "COPYING"
+                                                                                "CMakeLists.txt"
+                                                                                "meson.build"
+
+                                                                        ];
                                                                 };
                                                         };
                                                 };
