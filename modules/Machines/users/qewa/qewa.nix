@@ -41,6 +41,7 @@
                                 rofi.enable = true;
                                 yazi.enable = true;
                                 lazygit.enable = true;
+                                cava.enable = true;
 
                                 git = {
                                         enable = true;
