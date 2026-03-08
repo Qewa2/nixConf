@@ -120,6 +120,7 @@
                                                         enableTreesitter = true;
                                                         clang.enable = true;
                                                         python.enable = true;
+                                                        rust.enable = true;
                                                         nix = {
                                                                 enable = true;
                                                                 extraDiagnostics.enable = true;
