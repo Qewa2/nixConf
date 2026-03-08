@@ -33,6 +33,9 @@
                                 enable = true;
                                 autoEnable = true;
                                 polarity = "dark";
+                                targets = {
+                                        cava.rainbow.enable = true;
+                                };
                         };
 
                         programs = {
