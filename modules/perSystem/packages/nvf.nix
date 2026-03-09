@@ -1,5 +1,5 @@
 { inputs, ... }: {
-        perSystem = { pkgs, lib, ... }: {
+        perSystem = { pkgs, ... }: {
                 packages.myNvim = (inputs.nvf.lib.neovimConfiguration {
                         inherit pkgs;
                         modules = [
@@ -137,6 +137,20 @@
                                                                 mode = "n";
                                                                 silent = true;
                                                                 action = ":UndotreeToggle<CR>";
+                                                        }
+
+                                                        {
+                                                                key = "<leader>ut";
+                                                                mode = "n";
+                                                                silent = true;
+                                                                action = ":UndotreeToggle<CR>";
+                                                        }
+
+                                                        {
+                                                                key = "<leader>uf";
+                                                                mode = "n";
+                                                                silent = true;
+                                                                action = ":UndotreeFocus<CR>";
                                                         }
                                                 ];
                                         };
