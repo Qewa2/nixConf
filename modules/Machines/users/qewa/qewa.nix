@@ -9,9 +9,9 @@
                 
                 home-manager.users.qewa = { pkgs, ... }: {
                         imports = [
-                                self.homeManagerModules.base
+                                self.homeModules.base
 
-                                self.homeManagerModules.btop
+                                self.homeModules.btop
                         ];
 
                         home = {
