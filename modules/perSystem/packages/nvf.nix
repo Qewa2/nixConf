@@ -12,6 +12,10 @@
                                                         expandtab = true;
                                                 };
 
+                                                globals = {
+                                                        rust_recommended_style = 0;
+                                                };
+
                                                 clipboard = {
                                                         enable = true;
                                                         providers.wl-copy.enable = true;
