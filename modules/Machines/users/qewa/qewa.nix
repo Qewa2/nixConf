@@ -44,8 +44,6 @@
                                 lazygit.enable = true;
 
                                 git = {
-                                        enable = true;
-
                                         settings = {
                                                 user = {
                                                         name = "Qewa2";
