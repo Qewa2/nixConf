@@ -12,6 +12,7 @@
                                 self.homeModules.base
 
                                 self.homeModules.btop
+                                self.homeModules.cava
                         ];
 
                         home = {
@@ -33,9 +34,6 @@
                                 enable = true;
                                 autoEnable = true;
                                 polarity = "dark";
-                                targets = {
-                                        cava.rainbow.enable = true;
-                                };
                         };
 
                         programs = {
@@ -44,7 +42,6 @@
                                 rofi.enable = true;
                                 yazi.enable = true;
                                 lazygit.enable = true;
-                                cava.enable = true;
 
                                 git = {
                                         enable = true;
