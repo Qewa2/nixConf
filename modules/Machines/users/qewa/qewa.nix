@@ -9,9 +9,12 @@
                 
                 home-manager.users.qewa = { pkgs, ... }: {
                         imports = [
-                                self.homeManagerModules.base
+                                self.homeModules.base
 
-                                self.homeManagerModules.btop
+                                self.homeModules.btop
+                                self.homeModules.cava
+
+                                self.homeModules.styling
                         ];
 
                         home = {
@@ -29,26 +32,14 @@
                                 };
                         };
 
-                        stylix = {
-                                enable = true;
-                                autoEnable = true;
-                                polarity = "dark";
-                                targets = {
-                                        cava.rainbow.enable = true;
-                                };
-                        };
-
                         programs = {
                                 kitty.enable = true;
                                 vesktop.enable = true;
                                 rofi.enable = true;
                                 yazi.enable = true;
                                 lazygit.enable = true;
-                                cava.enable = true;
 
                                 git = {
-                                        enable = true;
-
                                         settings = {
                                                 user = {
                                                         name = "Qewa2";
