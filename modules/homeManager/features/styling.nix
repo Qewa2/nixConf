@@ -3,7 +3,7 @@
                 stylix = {
                         enable = true;
                         autoEnable = true;
-                        polarity = lib.mkDefault "dark";
+                        polarity = lib.mkDefault "either";
                 };
         };
 }
