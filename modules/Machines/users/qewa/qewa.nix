@@ -13,6 +13,8 @@
 
                                 self.homeModules.btop
                                 self.homeModules.cava
+
+                                self.homeModules.styling
                         ];
 
                         home = {
@@ -28,12 +30,6 @@
                                 file = {
                                         ".config/mango".source = ./mango;
                                 };
-                        };
-
-                        stylix = {
-                                enable = true;
-                                autoEnable = true;
-                                polarity = "dark";
                         };
 
                         programs = {
