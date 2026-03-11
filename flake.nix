@@ -16,8 +16,8 @@
 
                 awww.url = "git+https://codeberg.org/LGFae/awww";
                 
-                mango = {
-                        url = "github:DreamMaoMao/mango";
+                mangowm = {
+                        url = "github:mangowm/mango";
                         inputs.nixpkgs.follows = "nixpkgs";
                 };
 
