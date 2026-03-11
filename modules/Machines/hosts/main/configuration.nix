@@ -5,7 +5,7 @@
                         self.nixosModules.main-hardware
                         inputs.home-manager.nixosModules.default
                         inputs.stylix.nixosModules.stylix
-                        inputs.mango.nixosModules.mango
+                        inputs.mangowm.nixosModules.mango
                 ];
         };
 
