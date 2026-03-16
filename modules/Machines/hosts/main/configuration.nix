@@ -62,8 +62,6 @@
                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                 ];
 
-                boot.plymouth.enable = true;
-
                 programs = {
                         mango.enable = true;
                         nh.flake = "/home/qewa/git/nixConf";

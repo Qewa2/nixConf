@@ -1,6 +1,6 @@
 {
         flake.nixosModules.styling = { pkgs, lib, config, ... }: {
-                 stylix = {
+                stylix = {
                         enable = true;
                         autoEnable = lib.mkDefault true;
                         base16Scheme = lib.mkDefault"${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
@@ -15,5 +15,6 @@
                                 emoji = lib.mkDefault config.stylix.fonts.monospace;
                         };
                 };
+                boot.plymouth.enable = true;
         };
 }
