@@ -139,13 +139,6 @@
 
                                                 keymaps = [
                                                         {
-                                                                key = "<leader>u";
-                                                                mode = "n";
-                                                                silent = true;
-                                                                action = ":UndotreeToggle<CR>";
-                                                        }
-
-                                                        {
                                                                 key = "<leader>ut";
                                                                 mode = "n";
                                                                 silent = true;
