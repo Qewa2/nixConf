@@ -2,5 +2,8 @@
 
 FILE="${BASH_SOURCE}"
 DIR="$(dirname $FILE)"
+RESULT="$DIR/result"
 
-nix run nixpkgs#nixos-generators -- --format iso --flake "$DIR"/../../../..#tailsNix -o "$DIR"/result
+rm -rf "$RESULT"
+
+nix run nixpkgs#nixos-generators -- --format iso --flake "$DIR"/../../../..#tailsNix -o "$RESULT"

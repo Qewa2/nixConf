@@ -3,11 +3,12 @@
                 users.users.tails = {
                         isNormalUser = true;
                         description = "Tails";
+                        initialPassword = "";
                         shell = pkgs.bash;
                         extraGroups = [ "networkmanager" "audio" "wheel" "nixos" ];
                 };
 
-                home-manager.users.qewa = {
+                home-manager.users.tails = {
                         imports = [
                                 self.homeModules.base
 

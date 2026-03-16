@@ -11,7 +11,7 @@
 
         flake.nixosModules.tailsNix = { pkgs, modulesPath, ... }: {
                 imports = [
-                        "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+                        "${modulesPath}/installer/cd-dvd/installation-cd-base.nix"
 
                         self.nixosModules.base
 
@@ -19,6 +19,8 @@
                         self.nixosModules.bluetooth
 
                         self.nixosModules.styling
+
+                        self.nixosModules.tails
                 ];
 
                 nixpkgs.hostPlatform = "x86_64-linux";
