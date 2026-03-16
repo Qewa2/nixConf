@@ -1,8 +1,8 @@
 # TODO LIST
-- **Restructure `modules/Machines/users/qewa` into modules**
+- **Change some set options in `modules/Machines/hosts/main/configuration.nix` to homeManager**
+- **Add Custom init system like xinit with custom configs**
 - **Look into impermanence**
 - **add either ewww or quickshell widgets**
-- **maybe add USB Stick config for tailsOS like use**
 - **Add starship or ohMyPosh**
 - **Add virtualization Module**
 - **Maybe add virtual Machine for openClaw**
