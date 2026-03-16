@@ -48,7 +48,6 @@
                         variant = "";
                 };
 
-                /*
                 environment = {
                         systemPackages = with pkgs; [
                                 tor-browser
@@ -70,6 +69,5 @@
                 };
 
                 programs.mango.enable = true;
-                */
         };
 }

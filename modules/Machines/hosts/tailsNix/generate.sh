@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-nix run nixpkgs#nixos-generators -- --format iso --flake ../../../..#tailsNix -o result
+FILE="${BASH_SOURCE}"
+DIR="$(dirname $FILE)"
+
+nix run nixpkgs#nixos-generators -- --format iso --flake "$DIR"/../../../..#tailsNix -o "$DIR"/result
