@@ -55,7 +55,6 @@
                         ncdu
                         brave
                         wl-clipboard
-                        rofi
                         pavucontrol
                         hyprcursor
                         bibata-cursors
