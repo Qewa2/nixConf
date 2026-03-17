@@ -16,5 +16,9 @@
                         };
                 };
                 boot.plymouth.enable = true;
+
+                environment.systemPackages = with pkgs; [
+                        bibata-cursors
+                ];
         };
 }
