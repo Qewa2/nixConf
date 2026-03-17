@@ -56,8 +56,6 @@
                         brave
                         wl-clipboard
                         pavucontrol
-                        hyprcursor
-                        bibata-cursors
                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                 ];
 
