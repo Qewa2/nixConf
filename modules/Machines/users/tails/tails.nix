@@ -30,7 +30,7 @@
                                         ".config/mango/monitors.conf".source = ../qewa/mango/monitors.conf;
                                         ".config/mango/rule.conf".source = ../qewa/mango/rule.conf;
                                         ".config/mango/start.sh".source = ./start.sh;
-                                        "wallpaper.jpg".source = ./Gradient.jpg; # https://wallhaven.cc/w/70p7p0
+                                        "wallpaper.jpg".source = ./kvacm-Cliff.jpg; # https://wallhaven.cc/w/k81776
                                 };
 
                                 packages = with pkgs; [
