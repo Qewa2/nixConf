@@ -9,7 +9,7 @@
                 ];
         };
 
-        flake.nixosModules.tailsNix = { pkgs, modulesPath, ... }: {
+        flake.nixosModules.tailsNix = { pkgs, lib, modulesPath, ... }: {
                 imports = [
                         "${modulesPath}/installer/cd-dvd/installation-cd-base.nix"
 
@@ -28,6 +28,28 @@
                 networking.hostName = "tailsNix";
 
                 time.timeZone = "Europe/Berlin";
+
+                users.users = {
+                        nixos = {
+                                hashedPassword = "!";
+                                hashedPasswordFile = lib.mkForce null;
+
+                                initialHashedPassword = lib.mkForce null;
+                                initialPassword = lib.mkForce null;
+                                password = lib.mkForce null;
+
+                                extraGroups = [];
+                        };
+
+                        root = {
+                                hashedPassword = "!";
+                                hashedPasswordFile = lib.mkForce null;
+
+                                initialHashedPassword = lib.mkForce null;
+                                initialPassword = lib.mkForce null;
+                                password = lib.mkForce null;
+                        };
+                };
 
                 i18n = {
                         defaultLocale = "en_US.UTF-8";
