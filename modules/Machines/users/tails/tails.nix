@@ -1,5 +1,5 @@
 { inputs, self, ... }: {
-        flake.nixosModules.tails = { pkgs, ... }: {
+        flake.nixosModules.tails = { pkgs, lib, ... }: {
                 users.users.tails = {
                         isNormalUser = true;
                         description = "Tails";
@@ -24,12 +24,14 @@
 
                                 file = {
                                         ".config/mango/config.conf".source = ../qewa/mango/config.conf;
-                                        ".config/mango/bind.conf".source = ../qewa/mango/bind.conf;
-                                        ".config/mango/binds.md".source = ../qewa/mango/binds.md;
                                         ".config/mango/env.conf".source = ../qewa/mango/env.conf;
-                                        ".config/mango/monitors.conf".source = ../qewa/mango/monitors.conf;
                                         ".config/mango/rule.conf".source = ../qewa/mango/rule.conf;
+                                        ".config/mango/apperance.conf".source = ../qewa/mango/apperance.conf;
+                                        ".config/mango/peripherals".source = ../qewa/mango/peripherals;
+                                        ".config/mango/layouts".source = ../qewa/mango/layouts;
+                                        ".config/mango/binds".source = ../qewa/mango/binds;
                                         ".config/mango/start.sh".source = ./start.sh;
+                                        
                                         "wallpaper.jpg".source = ./kvacm-Cliff.jpg; # https://wallhaven.cc/w/k81776
                                 };
 
