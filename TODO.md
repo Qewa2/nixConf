@@ -4,7 +4,7 @@
 - **Change some set options in `modules/Machines/hosts/main/configuration.nix` to homeManager**
 - **Add Custom init system like xinit with custom configs**
 - **Look into impermanence**
-- **add either ewww or quickshell widgets**
+- **add either ewww or quickshell widgets or a custom dynamic island**
 - **Add starship or ohMyPosh**
 - **Add virtualization Module**
 - **Maybe add virtual Machine for openClaw**
