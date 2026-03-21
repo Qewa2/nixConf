@@ -1,4 +1,5 @@
 # TODO LIST
+- **Add disc encryption as an extra module**
 - **Force all traffic through tor**
 - **Auto connect to tor**
 - **Change some set options in `modules/Machines/hosts/main/configuration.nix` to homeManager**
