@@ -25,6 +25,7 @@
                                         cowsay
                                         audible-cli
                                         whatsapp-electron
+                                        labymod-launcher
                                 ];
 
                                 file = {
