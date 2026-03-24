@@ -1,4 +1,4 @@
-{
+{ inputs, ... }: {
         flake.nixosModules.base = { pkgs, config, ... }:
                 let
                         bootScript = pkgs.writeShellScript "greetd-boot" ''
@@ -9,6 +9,16 @@
                         '';
                 in
                 {
+                        imports = [
+                                inputs.winit.nixosModules.winit
+                        ];
+
+                        environment.systemPackages = [
+                                inputs.winit.packages.${pkgs.stdenv.hostPlatform}.winit
+                        ];
+
+                        programs.winit.enable = true;
+
                         boot = {
                                 loader = {
                                         systemd-boot.enable = false;
@@ -27,7 +37,7 @@
                                 settings = {
                                         default_session = {
                                                 command = "${pkgs.tuigreet}/bin/tuigreet \\
-                                                --cmd \"${bootScript}\"";
+                                                --cmd \"winit\"";
                                                 user = "greeter";
                                                 timeout = 10;
                                         };
