@@ -23,15 +23,7 @@
                                 stateVersion = "25.11";
 
                                 file = {
-                                        ".config/mango/config.conf".source = ../qewa/mango/config.conf;
-                                        ".config/mango/env.conf".source = ../qewa/mango/env.conf;
-                                        ".config/mango/rule.conf".source = ../qewa/mango/rule.conf;
-                                        ".config/mango/apperance.conf".source = ../qewa/mango/apperance.conf;
-                                        ".config/mango/peripherals".source = ../qewa/mango/peripherals;
-                                        ".config/mango/layouts".source = ../qewa/mango/layouts;
-                                        ".config/mango/binds".source = ../qewa/mango/binds;
-                                        ".config/mango/start.sh".source = ./start.sh;
-                                        
+                                        ".config/mango".source = ./mango;
                                         "wallpaper.jpg".source = ./kvacm-Cliff.jpg; # https://wallhaven.cc/w/k81776
                                 };
 
