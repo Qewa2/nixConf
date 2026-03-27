@@ -15,6 +15,7 @@
                                 self.homeModules.cava
 
                                 self.homeModules.styling
+                                self.homeModules.development
                         ];
 
                         home = {
