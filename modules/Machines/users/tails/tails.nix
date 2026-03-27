@@ -20,7 +20,7 @@
                         home = {
                                 username = "tails";
                                 homeDirectory = "/home/tails";
-                                stateVersion = "25.11";
+                                stateVersion = "26.05";
 
                                 file = {
                                         ".config/mango".source = ./mango;

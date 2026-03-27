@@ -20,7 +20,7 @@
                         home = {
                                 username = "qewa";
                                 homeDirectory = "/home/qewa";
-                                stateVersion = "25.11";
+                                stateVersion = "26.05";
                                 packages = with pkgs; [
                                         cowsay
                                         audible-cli
