@@ -7,7 +7,7 @@
                         extraGroups = [ "networkmanager" "audio" "wheel" "nixos" ];
                 };
                 
-                home-manager.users.qewa = { pkgs, ... }: {
+                home-manager.users.qewa = { pkgs, config, ... }: {
                         imports = [
                                 self.homeModules.base
 
@@ -30,6 +30,12 @@
 
                                 file = {
                                         ".config/mango".source = ./mango;
+                                        ".init.sh".text = ''
+                                                #!${pkgs.lib.getExe pkgs.bash}
+                                                ${pkgs.lib.getExe pkgs.fastfetch}
+                                                mango > /dev/null 2>&1
+                                                exec ${pkgs.lib.getExe pkgs.bash}
+                                        '';
                                 };
                         };
 

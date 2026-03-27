@@ -25,6 +25,12 @@
                                 file = {
                                         ".config/mango".source = ./mango;
                                         "wallpaper.jpg".source = ./kvacm-Cliff.jpg; # https://wallhaven.cc/w/k81776
+                                        ".init.sh".text = ''
+                                                #!${pkgs.lib.getExe pkgs.bash}
+                                                ${pkgs.lib.getExe pkgs.fastfetch}
+                                                mango > /dev/null 2>&1
+                                                exec ${pkgs.lib.getExe pkgs.bash}
+                                        '';
                                 };
 
                                 packages = with pkgs; [
