@@ -39,7 +39,7 @@
                                         ".init.sh".text = ''
                                                 #!${pkgs.lib.getExe pkgs.bash}
                                                 ${pkgs.lib.getExe pkgs.fastfetch}
-                                                mango > /dev/null 2>&1
+                                                ${config.wayland.windowManager.mango.package} > /dev/null 2>&1
                                                 exec ${pkgs.lib.getExe pkgs.bash}
                                         '';
                                 };
