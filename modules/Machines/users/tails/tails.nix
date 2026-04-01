@@ -1,5 +1,5 @@
 { inputs, self, ... }: {
-        flake.nixosModules.tails = { pkgs, lib, ... }: {
+        flake.nixosModules.tails = { pkgs, ... }: {
                 users.users.tails = {
                         isNormalUser = true;
                         description = "Tails";
@@ -8,7 +8,7 @@
                         extraGroups = [ "networkmanager" "audio" "wheel" "nixos" ];
                 };
 
-                home-manager.users.tails = {
+                home-manager.users.tails = { pkgs, config, ... }: {
                         imports = [
                                 self.homeModules.base
 
@@ -29,7 +29,7 @@
                                         ".init.sh".text = ''
                                                 #!${pkgs.lib.getExe pkgs.bash}
                                                 ${pkgs.lib.getExe pkgs.fastfetch}
-                                                mango > /dev/null 2>&1
+                                                ${config.wayland.windowManager.mango.package} > /dev/null 2>&1
                                                 exec ${pkgs.lib.getExe pkgs.bash}
                                         '';
                                 };
