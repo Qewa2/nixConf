@@ -5,7 +5,6 @@
                         self.nixosModules.main-hardware
                         inputs.home-manager.nixosModules.default
                         inputs.stylix.nixosModules.stylix
-                        inputs.mangowm.nixosModules.mango
                 ];
         };
 
@@ -50,16 +49,7 @@
 
                 console.keyMap = "de";
 
-                environment.systemPackages = with pkgs; [
-                        ncdu
-                        brave
-                        wl-clipboard
-                        pavucontrol
-                        inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
-                ];
-
                 programs = {
-                        mango.enable = true;
                         nh.flake = "/home/qewa/git/nixConf";
                 };
 

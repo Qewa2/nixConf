@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ inputs, self, ... }: {
         flake.nixosModules.qewa = { pkgs, ... }: {
                 users.users.qewa = {
                         isNormalUser = true;
@@ -13,6 +13,7 @@
 
                                 self.homeModules.btop
                                 self.homeModules.cava
+                                self.homeModules.mango
 
                                 self.homeModules.styling
                                 self.homeModules.development
@@ -27,6 +28,10 @@
                                         audible-cli
                                         whatsapp-electron
                                         labymod-launcher
+                                        inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+                                        ncdu
+                                        brave
+                                        wl-clipboard
                                 ];
 
                                 file = {

@@ -13,6 +13,7 @@
                                 self.homeModules.base
 
                                 self.homeModules.btop
+                                self.homeModules.mango
 
                                 self.homeModules.styling
                         ];

@@ -93,7 +93,5 @@
                         enableGeoIP = false;
                         torsocks.enable = true;
                 };
-
-                programs.mango.enable = true;
         };
 }
