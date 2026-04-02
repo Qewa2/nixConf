@@ -15,12 +15,6 @@
                         steam.gamescopeSession.enable = true;
                 };
                 
-                system.activationScripts.NixOsPermissions = {
-                        text = ''
-                                gamemoded -t
-                        '';
-                };
-                
                 environment.systemPackages = with pkgs; [
                         steam-run
                         (heroic.override {
