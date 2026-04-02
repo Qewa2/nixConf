@@ -4,7 +4,7 @@
                         isNormalUser = true;
                         description = "Qewa";
                         shell = pkgs.bash;
-                        extraGroups = [ "networkmanager" "audio" "wheel" "nixos" ];
+                        extraGroups = [ "gamemode" "networkmanager" "audio" "wheel" "nixos" ];
                 };
                 
                 home-manager.users.qewa = { pkgs, config, ... }: {
