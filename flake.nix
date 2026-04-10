@@ -31,6 +31,10 @@
                         inputs.nixpkgs.follows = "nixpkgs";
                 };
 
+                otter-launcher.url = "github:kuokuo123/otter-launcher";
+
+                fsel.url = "github:Mjoyfull/fsel";
+
                 flake-parts.url = "github:hercules-ci/flake-parts";
 
                 import-tree.url = "github:vic/import-tree";
