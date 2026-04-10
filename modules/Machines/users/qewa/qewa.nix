@@ -9,6 +9,7 @@
                 
                 home-manager.users.qewa = { pkgs, config, ... }: {
                         imports = [
+                                inputs.otter-launcher.homeModules.otter-launcher
                                 self.homeModules.base
 
                                 self.homeModules.btop
@@ -29,6 +30,7 @@
                                         whatsapp-electron
                                         labymod-launcher
                                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+                                        inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default
                                         ncdu
                                         brave
                                         wl-clipboard
@@ -61,6 +63,10 @@
                                                 safe.directory = "/etc/nixos";
                                                 init.defaultBranch = "main";
                                         };
+                                };
+
+                                otter-launcher = {
+                                        enable = true;
                                 };
                         };
                 };
