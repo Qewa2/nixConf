@@ -28,6 +28,7 @@
                                         cowsay
                                         audible-cli
                                         whatsapp-electron
+                                        gajim
                                         labymod-launcher
                                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                                         inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default
