@@ -33,7 +33,7 @@
 
                 otter-launcher.url = "github:kuokuo123/otter-launcher";
 
-                fsel.url = "github:Mjoyfull/fsel";
+                fsel.url = "github:Mjoyufull/fsel";
 
                 flake-parts.url = "github:hercules-ci/flake-parts";
 
