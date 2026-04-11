@@ -633,6 +633,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1773734432,
+        "narHash": "sha256-IF5ppUWh6gHGHYDbtVUyhwy/i7D261P7fWD1bPefOsw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "cda48547b432e8d3b18b4180ba07473762ec8558",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -716,7 +732,8 @@
         "nvf": "nvf",
         "otter-launcher": "otter-launcher",
         "stylix": "stylix",
-        "winit": "winit"
+        "winit": "winit",
+        "wrappers": "wrappers"
       }
     },
     "rust-analyzer-src": {
@@ -954,6 +971,24 @@
       "original": {
         "owner": "Qewa2",
         "repo": "winit",
+        "type": "github"
+      }
+    },
+    "wrappers": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1775600302,
+        "narHash": "sha256-2fgKImv78CXIcfo1RsY7EI4uMZ84x/MggA5rrusYc7c=",
+        "owner": "lassulus",
+        "repo": "wrappers",
+        "rev": "9d8397d8ef1ac35763085f3338589f558128f7db",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lassulus",
+        "repo": "wrappers",
         "type": "github"
       }
     }
