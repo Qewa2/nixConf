@@ -29,9 +29,10 @@
                                         audible-cli
                                         whatsapp-electron
                                         gajim
+                                        mumble
                                         labymod-launcher
                                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
-                                        inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
                                         ncdu
                                         brave
                                         wl-clipboard
