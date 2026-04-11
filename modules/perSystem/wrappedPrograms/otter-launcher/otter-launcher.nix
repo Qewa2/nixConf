@@ -8,28 +8,30 @@
                         ];
 
                         preHook = ''
+                                export SHOULD_DELETE_DIR=true
+                                export SHOULD_DELETE_FILE=true
+
+                                if [ -d "$HOME/.config/otter-launcher/" ]; then
+                                        echo "otter configuration directory already exists"
+                                        SHOULD_DELETE_DIR=false
+                                fi
+
                                 if [ -f "$HOME/.config/otter-launcher/config.toml" ]; then
                                         echo "otter configuration already exists"
-                                        export SHOULD_DELETE_FILE=false
-                                        export SHOULD_DELETE_DIR=false
+                                        SHOULD_DELETE_FILE=false
+                                        SHOULD_DELETE_DIR=false
                                 else
-                                        if [ -d "$HOME/.config/otter-launcher/" ]; then
-                                                echo "otter configuration directory already exists"
-                                                SHOULD_DELETE_DIR=false
-                                        else
-                                                SHOULD_DELETE_DIR=true
-                                        fi
-
                                         mkdir -p "$HOME/.config/otter-launcher/"
                                         ln -s ${toString ./config.toml} "$HOME/.config/otter-launcher/config.toml"
-                                        export SHOULD_DELETE_FILE=true
                                 fi
                         '';
 
                         postHook = ''
                                 if [ $SHOULD_DELETE_FILE == true ]; then
                                         rm -rf "$HOME/.config/otter-launcher/config.toml"
-                                elif [ $SHOULD_DELETE_DIR == true ]; then
+                                fi
+
+                                if [ $SHOULD_DELETE_DIR == true ]; then
                                         rm -rf "$HOME/.config/otter-launcher/"
                                 fi
                         '';
