@@ -35,6 +35,8 @@
 
                 fsel.url = "github:Mjoyufull/fsel";
 
+                wrappers.url = "github:lassulus/wrappers";
+
                 flake-parts.url = "github:hercules-ci/flake-parts";
 
                 import-tree.url = "github:vic/import-tree";
