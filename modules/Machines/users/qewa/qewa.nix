@@ -33,6 +33,7 @@
                                         labymod-launcher
                                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                                         self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.otter-launcher
                                         ncdu
                                         brave
                                         wl-clipboard
@@ -65,10 +66,6 @@
                                                 safe.directory = "/etc/nixos";
                                                 init.defaultBranch = "main";
                                         };
-                                };
-
-                                otter-launcher = {
-                                        enable = true;
                                 };
                         };
                 };
