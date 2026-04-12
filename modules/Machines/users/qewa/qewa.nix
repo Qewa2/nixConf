@@ -70,6 +70,10 @@
                                         };
                                 };
                         };
+
+                        services = {
+                                playerctld.enable = true;
+                        };
                 };
         };
 }
