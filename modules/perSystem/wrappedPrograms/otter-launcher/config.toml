@@ -45,9 +45,9 @@ footer = ""
 suggestion_lines = 10
 list_prefix = "    "
 selection_prefix = "  \u001B[32;1m"
-prefix_padding = 3
+prefix_padding = 4
 
-default_module_message = "    \u001B[33msearch\u001B[0m with brave"
+default_module_message = "    launch \u001B[33mapps\u001B[0m"
 empty_module_message = ""
 
 customized_list_order = false
@@ -82,7 +82,14 @@ unbind_proc = true
 [[modules]]
 description = "launch app directly"
 prefix = "app"
-cmd = "fsel --detach -p {}"
+cmd = "fsel --detach --match-mode exact -p {} || fsel --detach -ss {}"
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "kill apps instantly"
+prefix = "kill"
+cmd = "pkill {}"
 with_argument = true
 unbind_proc = true
 
@@ -99,6 +106,9 @@ description = "run commands"
 prefix = "sh"
 cmd = """
 bash -c "{}"
+whiel true; do
+        sleep 1
+done
 """
 with_argument = true
 unbind_proc = true
@@ -106,7 +116,12 @@ unbind_proc = true
 [[modules]]
 description = "search packages"
 prefix = "pac"
-cmd = "nh search {}"
+cmd = """
+nh search {}
+while true; do
+        sleep 1
+done
+"""
 with_argument = true
 unbind_proc = true
 
