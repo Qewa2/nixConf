@@ -6,7 +6,7 @@ Super, r -> reloar the Configuration at runtime
 
 Alt, Enter -> open kitty
 
-Alt, Space -> open rofi
+Alt, Space -> open otter-launcher
 
 Super, Escape -> Quit mango
 
