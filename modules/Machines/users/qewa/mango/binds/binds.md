@@ -8,6 +8,8 @@ Alt, Enter -> open kitty
 
 Alt, Space -> open otter-launcher
 
+Super, Space -> Play or Pause current media
+
 Super, Escape -> Quit mango
 
 Alt, c -> Kill current App
