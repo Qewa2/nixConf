@@ -12,7 +12,7 @@
 
                         text = ''
                                 #!${pkgs.bash}
-                                kitty -e launch
+                                kitty --app-id="launcher" --title="otter-launcher" -e launch
                         '';
                 };
         };

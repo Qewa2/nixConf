@@ -11,7 +11,6 @@
 
                         text = ''
                                 #!${pkgs.bash}
-                                mmsg -d togglefloating
                                 mmsg -d resizewin,-10000,-10000
                                 mmsg -d resizewin,+400,+600
                                 mmsg -d centerwin
