@@ -31,12 +31,15 @@
                                         gajim
                                         mumble
                                         labymod-launcher
-                                        inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
-                                        self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
-                                        self.packages.${pkgs.stdenv.hostPlatform.system}.otter-launcher
                                         ncdu
                                         brave
                                         wl-clipboard
+                                        inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.otter-launcher
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.launch
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.launcher
+
                                 ];
 
                                 file = {
@@ -52,7 +55,6 @@
                         programs = {
                                 kitty.enable = true;
                                 vesktop.enable = true;
-                                rofi.enable = true;
                                 yazi.enable = true;
                                 lazygit.enable = true;
 
