@@ -89,7 +89,7 @@ unbind_proc = true
 [[modules]]
 description = "brave search"
 prefix = "br"
-cmd = "xdg-open https://search.brave.com/search?q='{}'"
+cmd = "xdg-open \"https://search.brave.com/search?q={}\"; pkill otter-launcher"
 with_argument = true
 url_encode = true
 unbind_proc = true
