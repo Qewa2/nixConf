@@ -7,7 +7,6 @@
                                 coreutils
                                 bash
                                 kitty
-                                self.packages.${pkgs.stdenv.hostPlatform.system}.launch
                         ];
 
                         text = ''
