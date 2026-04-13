@@ -6,6 +6,7 @@
                         runtimeInputs = [
                                 self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
                                 pkgs.coreutils
+                                pkgs.nh
                         ];
 
                         preHook = ''
