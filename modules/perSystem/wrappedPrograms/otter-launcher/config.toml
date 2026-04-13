@@ -42,7 +42,7 @@ $( \
 """
 footer = ""
 
-suggestion_lines = 10
+suggestion_lines = 20
 list_prefix = "    "
 selection_prefix = "  \u001B[32;1m"
 prefix_padding = 4
