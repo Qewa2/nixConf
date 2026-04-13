@@ -7,12 +7,11 @@
                                 coreutils
                                 bash
                                 kitty
-                                self.packages.${pkgs.stdenv.hostPlatform.system}.launch
                         ];
 
                         text = ''
                                 #!${pkgs.bash}
-                                kitty --app-id="launcher" --title="otter-launcher" -e launch
+                                kitty --app-id="launcher" --title="otter-launcher" -e otter-launcher
                         '';
                 };
         };

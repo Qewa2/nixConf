@@ -96,7 +96,7 @@ unbind_proc = true
 [[modules]]
 description = "brave search"
 prefix = "br"
-cmd = "xdg-open \"https://search.brave.com/search?q={}\"; pkill otter-launcher"
+cmd = "xdg-open \"https://search.brave.com/search?q={}\"; sleep 0.1; pkill otter-launcher"
 with_argument = true
 url_encode = true
 unbind_proc = true
@@ -125,3 +125,55 @@ done
 with_argument = true
 unbind_proc = true
 
+[[modules]]
+description = "update system"
+prefix = "upd"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh os switch -H main --diff always --ask --update
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "update system and commit"
+prefix = "updc"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh os switch -H main --diff always --ask --update --commit-lock-file
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = false
+unbind_proc = true
+
+[[modules]]
+description = "rebuild without updating"
+prefix = "rb"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh os switch -H main --diff always --ask
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = false
+unbind_proc = true
+
+[[modules]]
+description = "cleanup nix & nix-store"
+prefix = "cl"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh clean all --ask --keep 7
+nix-store --optimise
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = false
+unbind_proc = true
