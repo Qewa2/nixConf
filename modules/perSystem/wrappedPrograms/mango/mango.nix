@@ -11,7 +11,7 @@
                         ];
 
                         flags = {
-                                "--config" = toString ./mango;
+                                "-c" = toString ./mango/config.conf;
                         };
                 };
         };
