@@ -14,7 +14,6 @@
 
                                 self.homeModules.btop
                                 self.homeModules.cava
-                                self.homeModules.mango
 
                                 self.homeModules.styling
                                 self.homeModules.development
@@ -38,11 +37,11 @@
                                         self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
                                         self.packages.${pkgs.stdenv.hostPlatform.system}.otter-launcher
                                         self.packages.${pkgs.stdenv.hostPlatform.system}.launcher
-
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.mango
                                 ];
 
                                 file = {
-                                        ".config/mango".source = ./mango;
+                                        ".config/mango/start.sh".source = ./mango/start.sh;
                                         ".init.sh".text = ''
                                                 fastfetch
                                                 mango > /dev/null 2>&1
