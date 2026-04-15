@@ -1,5 +1,5 @@
 { inputs, self, ... }: {
-        flake.nixosModules.tails = { pkgs, lib, ... }: {
+        flake.nixosModules.tails = { pkgs, ... }: {
                 users.users.tails = {
                         isNormalUser = true;
                         description = "Tails";
@@ -8,11 +8,12 @@
                         extraGroups = [ "networkmanager" "audio" "wheel" "nixos" ];
                 };
 
-                home-manager.users.tails = {
+                home-manager.users.tails = { pkgs, config, ... }: {
                         imports = [
                                 self.homeModules.base
 
                                 self.homeModules.btop
+                                self.homeModules.mango
 
                                 self.homeModules.styling
                         ];
@@ -20,11 +21,16 @@
                         home = {
                                 username = "tails";
                                 homeDirectory = "/home/tails";
-                                stateVersion = "25.11";
+                                stateVersion = "26.05";
 
                                 file = {
                                         ".config/mango".source = ./mango;
                                         "wallpaper.jpg".source = ./kvacm-Cliff.jpg; # https://wallhaven.cc/w/k81776
+                                        ".init.sh".text = ''
+                                                fastfetch
+                                                mango > /dev/null 2>&1
+                                                exec bash
+                                        '';
                                 };
 
                                 packages = with pkgs; [

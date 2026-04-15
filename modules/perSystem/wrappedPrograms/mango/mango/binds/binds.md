@@ -6,7 +6,9 @@ Super, r -> reloar the Configuration at runtime
 
 Alt, Enter -> open kitty
 
-Alt, Space -> open rofi
+Alt, Space -> open otter-launcher
+
+Super, Space -> Play or Pause current media
 
 Super, Escape -> Quit mango
 

@@ -1,0 +1,202 @@
+[general]
+default_module = "a"
+
+empty_module = "a"
+
+# Command to run commands
+exec_cmd = "bash -c"
+
+vi_mode = true
+esc_to_abort = true
+
+cheatsheet_entry = "?"
+cheatsheet_viewer = "nvim -R"
+clear_screen_after_execution = false
+
+loop_mode = false
+
+external_editor = "nvim"
+
+delay_startup = 0
+
+callback = ""
+
+[interface]
+header = """
+\u001B[34;1m  \u001B[0m$USER@$(printf $HOSTNAME)\u001B[0m$(printf '\u001B[999C\u001B[14D')\u001B[31m\u001B[0m $(mpstat | awk 'FNR ==4 {print $4}') \u001B[33m󰍛\u001B[0m $(free -h | awk 'FNR == 2 {print $3}' | sed 's/i//')
+"""
+header_cmd = ""
+header_cmd_trimmed_lines = 0
+
+# Text in the input bar
+place_holder = "search"
+
+# Layout
+suggestion_mode = "list"
+ separator = """
+$( \
+    text="    modules"; \
+    printf "\u001B[0;90m$text \
+    $(printf -v line '%*s' \"$(( COLUMNS - $(printf "$text" | wc -m) - 3 ))\" ''; printf '%s' \"${line// /─}\")" \
+)
+"""
+footer = ""
+
+suggestion_lines = 20
+list_prefix = "    "
+selection_prefix = "  \u001B[32;1m"
+prefix_padding = 4
+
+default_module_message = "    launch \u001B[33mapps\u001B[0m"
+empty_module_message = ""
+
+customized_list_order = false
+
+indicator_with_arg_module = ""
+indicator_no_arg_module = ""
+
+# Colors
+prefix_color = "\u001B[33m"
+description_color = "\u001B[39m"
+place_holder_color = "\u001B[0m"
+hint_color = "\u001B[30m"
+
+# Move interface
+move_interface_right = 0
+move_interface_down = 0
+
+[overlay]
+overlay_cmd = ""
+overlay_trimmed_lines = 0
+overlay_height = 0
+move_overlay_right = 0
+move_overlay_down = 0
+
+[[modules]]
+description = "launch with fsel"
+prefix = "a"
+cmd = "fsel --detach -ss {}"
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "launch app directly"
+prefix = "app"
+cmd = "fsel --detach --match-mode exact --program {} || fsel --detach -ss {}"
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "kill apps instantly"
+prefix = "kill"
+cmd = "pkill {}"
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "brave search"
+prefix = "br"
+cmd = "xdg-open \"https://search.brave.com/search?q={}\"; sleep 0.1; pkill otter-launcher"
+with_argument = true
+url_encode = true
+unbind_proc = true
+
+[[modules]]
+description = "run commands"
+prefix = "sh"
+cmd = """
+bash -c "{}"
+whiel true; do
+        sleep 1
+done
+"""
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "search packages"
+prefix = "pac"
+cmd = """
+nh search {}
+while true; do
+        sleep 1
+done
+"""
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "update system"
+prefix = "upd"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh os switch -H main --diff always --ask --update
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "update system and commit"
+prefix = "updc"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh os switch -H main --diff always --ask --update --commit-lock-file
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = false
+unbind_proc = true
+
+[[modules]]
+description = "rebuild without updating"
+prefix = "rb"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh os switch -H main --diff always --ask
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = false
+unbind_proc = true
+
+[[modules]]
+description = "cleanup nix & nix-store"
+prefix = "cl"
+cmd = """
+mmsg -d resizewin,+200,-100
+mmsg -d centerwin
+nh clean all --ask --keep 7
+nix-store --optimise
+mmsg -d resizewin,-200,+100
+sleep 0.1
+"""
+with_argument = false
+unbind_proc = true
+
+[[modules]]
+description = "exit launcher"
+prefix = "exit"
+cmd = "bash -c exit"
+with_argument = false
+unbind_proc = false
+
+[[modules]]
+description = "power menu"
+prefix = "pwr"
+cmd = """
+function power {
+if [[ -n $1 ]]; then
+case $1 in
+"logout") session=`loginctl session-status | head -n 1 | awk '{print $1}'`; loginctl terminate-session $session ;;
+"suspend") systemctl suspend ;;
+"hibernate") systemctl hibernate ;;
+"reboot") systemctl reboot ;;
+"shutdown") systemctl poweroff ;;
+esac fi }
+power $(echo -e 'reboot\nshutdown\nlogout\nsuspend\nhibernate' | fzf --info-command 'printf " power menu ($FZF_POS/$FZF_TOTAL_COUNT)"' --cycle --gutter " " --pointer " ▌" --color "bg+:-1,pointer:1,info:8,separator:8,scrollbar:0" --prompt '  ' | tail -1)
+"""

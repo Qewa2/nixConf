@@ -5,7 +5,6 @@
                         self.nixosModules.main-hardware
                         inputs.home-manager.nixosModules.default
                         inputs.stylix.nixosModules.stylix
-                        inputs.mangowm.nixosModules.mango
                 ];
         };
 
@@ -16,7 +15,6 @@
                         self.nixosModules.bluetooth
                         self.nixosModules.wifi
                         self.nixosModules.ssh
-                        self.nixosModules.pairdrop
 
                         self.nixosModules.gaming
                         self.nixosModules.styling
@@ -51,16 +49,7 @@
 
                 console.keyMap = "de";
 
-                environment.systemPackages = with pkgs; [
-                        ncdu
-                        brave
-                        wl-clipboard
-                        pavucontrol
-                        inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
-                ];
-
                 programs = {
-                        mango.enable = true;
                         nh.flake = "/home/qewa/git/nixConf";
                 };
 
@@ -90,6 +79,6 @@
                 };
 
                 programs.mtr.enable = true;
-                system.stateVersion = "25.11";
+                system.stateVersion = "26.05";
         };
 }

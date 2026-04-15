@@ -1,4 +1,5 @@
 # TODO LIST
+- **Make users use winit and switch compositor to user config**
 - **Add disc encryption as an extra module**
 - **Force all traffic through tor**
 - **Auto connect to tor**
