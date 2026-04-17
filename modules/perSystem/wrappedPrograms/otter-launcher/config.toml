@@ -10,7 +10,7 @@ vi_mode = true
 esc_to_abort = true
 
 cheatsheet_entry = "?"
-cheatsheet_viewer = "nvim -R"
+cheatsheet_viewer = "clear; less -R"
 clear_screen_after_execution = false
 
 loop_mode = false
