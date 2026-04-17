@@ -2,9 +2,9 @@
         perSystem = { pkgs, ... }: {
                 packages.fsel = inputs.wrappers.lib.wrapPackage {
                         inherit pkgs;
-                        package = pkgs.fsel;
+                        package = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
                         runtimeInputs = [
-                                pkgs.fsel
+                                inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default
                         ];
 
                         flags = {

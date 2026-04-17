@@ -13,9 +13,9 @@
                                 self.homeModules.base
 
                                 self.homeModules.btop
-                                self.homeModules.mango
 
                                 self.homeModules.styling
+                                self.homeModules.development
                         ];
 
                         home = {
@@ -24,7 +24,7 @@
                                 stateVersion = "26.05";
 
                                 file = {
-                                        ".config/mango".source = ./mango;
+                                        ".config/mango/start.sh".source = ./mango/start.sh;
                                         "wallpaper.jpg".source = ./kvacm-Cliff.jpg; # https://wallhaven.cc/w/k81776
                                         ".init.sh".text = ''
                                                 fastfetch
@@ -35,6 +35,13 @@
 
                                 packages = with pkgs; [
                                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.otter-launcher
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.launcher
+                                        self.packages.${pkgs.stdenv.hostPlatform.system}.mango
+
+                                        wl-clipboard
                                 ];
                         };
 
@@ -42,6 +49,10 @@
                                 kitty.enable = true;
                                 rofi.enable = true;
                                 yazi.enable = true;
+                        };
+
+                        services = {
+                                playerctld.enable = true;
                         };
                 };
         };

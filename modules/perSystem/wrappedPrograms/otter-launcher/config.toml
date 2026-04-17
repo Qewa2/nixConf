@@ -82,7 +82,7 @@ unbind_proc = true
 [[modules]]
 description = "launch app directly"
 prefix = "app"
-cmd = "fsel --detach --match-mode exact -p {} || fsel --detach -ss {}"
+cmd = "fsel --detach --match-mode exact --program {} || fsel --detach -ss {}"
 with_argument = true
 unbind_proc = true
 
