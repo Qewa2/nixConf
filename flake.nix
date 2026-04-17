@@ -33,10 +33,7 @@
 
                 otter-launcher.url = "github:kuokuo123/otter-launcher";
 
-                fsel = {
-                        url = "github:Mjoyufull/fsel";
-                        inputs.nixpkgs.follows = "nixpkgs";
-                };
+                fsel.url = "github:Mjoyufull/fsel";
 
                 wrappers.url = "github:lassulus/wrappers";
 
