@@ -1,5 +1,5 @@
 { self, ... }: {
-        perSystem = { pkgs, ... }: {
+        perSystem = { pkgs, lib, ... }: {
                 packages.launcher = pkgs.writeShellApplication {
                         name = "launcher";
 
@@ -12,7 +12,7 @@
 
                         text = ''
                                 #!${pkgs.bash}
-                                kitty --app-id="launcher" --title="otter-launcher" -e otter-launcher
+                                kitty --app-id="launcher" --title="otter-launcher" -e ${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.otter-launcher}
                         '';
                 };
         };
