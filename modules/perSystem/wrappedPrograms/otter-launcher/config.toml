@@ -10,7 +10,7 @@ vi_mode = true
 esc_to_abort = true
 
 cheatsheet_entry = "?"
-cheatsheet_viewer = "nvim -R"
+cheatsheet_viewer = "clear; less -R"
 clear_screen_after_execution = false
 
 loop_mode = false
@@ -82,7 +82,7 @@ unbind_proc = true
 [[modules]]
 description = "launch app directly"
 prefix = "app"
-cmd = "fsel --detach --match-mode exact -p {} || fsel --detach -ss {}"
+cmd = "fsel --detach --match-mode exact --program {} || fsel --detach -ss {}"
 with_argument = true
 unbind_proc = true
 
@@ -184,3 +184,40 @@ prefix = "exit"
 cmd = "bash -c exit"
 with_argument = false
 unbind_proc = false
+
+[[modules]]
+description = "power menu"
+prefix = "pwr"
+cmd = """
+function power {
+        if [[ -n $1 ]]; then
+                case $1 in
+                        "logout") session=`loginctl session-status | head -n 1 | awk '{print $1}'`; loginctl terminate-session $session ;;
+                        "suspend") systemctl suspend ;;
+                        "hibernate") systemctl hibernate ;;
+                        "reboot") systemctl reboot ;;
+                        "shutdown") systemctl poweroff ;;
+                esac
+        fi
+}
+
+power $(echo -e 'reboot\nshutdown\nlogout\nsuspend\nhibernate' | fzf --info-command 'printf " power menu ($FZF_POS/$FZF_TOTAL_COUNT)"' --cycle --gutter " " --pointer " ▌" --color "bg+:-1,pointer:1,info:8,separator:8,scrollbar:0" --prompt '  ' | tail -1)
+"""
+
+[[modules]]
+description = "change window layout"
+prefix = "lay"
+cmd = """
+choice="$(
+  echo -e 'S  - Scroll\nVS - Vertical Scroll\nT  - Tile\nVT - Vertical Tile\nCT - Center Tile\nRT - Right Tile\nG  - Grid\nVG - Vertical Grid\nM  - Monocle\nK  - Deck\nVK - Vertical Deck\nTG - Overview' |
+  fzf --info-command 'printf " switch layout ($FZF_POS/$FZF_TOTAL_COUNT)"' \
+      --cycle --gutter " " --pointer " ▌" \
+      --color "bg+:-1,pointer:1,info:8,separator:8,scrollbar:0" \
+      --prompt '  ' |
+  cut -d' ' -f1
+)"
+
+[ -n "$choice" ] && mmsg -s -l "$choice"
+"""
+with_argument = false
+unbind_proc = true
