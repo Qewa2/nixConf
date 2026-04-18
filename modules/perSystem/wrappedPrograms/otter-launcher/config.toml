@@ -219,3 +219,5 @@ choice="$(
 
 [ -n "$choice" ] && mmsg -s -l "$choice"
 """
+with_argument = false
+unbind_proc = true
