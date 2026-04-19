@@ -12,6 +12,14 @@
                         ];
 
                         preHook = ''
+                                cleanup() {
+                                        rm -rf "$HOME/.config/otter-launcher"
+                                        if [[ -d "$HOME/.config/otter-launcher.bak" ]]; then
+                                                mv "$HOME/.config/otter-launcher.bak" "$HOME/.config/otter-launcher"
+                                        fi
+                                }
+                                trap cleanup EXIT
+
                                 if [[ -d "$HOME/.config/otter-launcher" ]]; then
                                         mv "$HOME/.config/otter-launcher" "$HOME/.config/otter-launcher.bak"
                                 fi
