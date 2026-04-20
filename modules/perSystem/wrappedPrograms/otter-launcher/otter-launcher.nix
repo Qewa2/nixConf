@@ -11,28 +11,9 @@
                                 pkgs.fzf
                         ];
 
-                        preHook = ''
-                                cleanup() {
-                                        rm -rf "$HOME/.config/otter-launcher"
-                                        if [[ -d "$HOME/.config/otter-launcher.bak" ]]; then
-                                                mv "$HOME/.config/otter-launcher.bak" "$HOME/.config/otter-launcher"
-                                        fi
-                                }
-                                trap cleanup EXIT
-
-                                if [[ -d "$HOME/.config/otter-launcher" ]]; then
-                                        mv "$HOME/.config/otter-launcher" "$HOME/.config/otter-launcher.bak"
-                                fi
-                                mkdir -p "$HOME/.config/otter-launcher/"
-                                ln -s ${toString ./config.toml} "$HOME/.config/otter-launcher/config.toml"
-                        '';
-
-                        postHook = ''
-                                rm -rf "$HOME/.config/otter-launcher"
-                                if [[ -d "$HOME/.config/otter-launcher.bak" ]]; then
-                                        mv "$HOME/.config/otter-launcher.bak" "$HOME/.config/otter-launcher"
-                                fi
-                        '';
+                        flags = {
+                                "--config" = toString ./config.toml;
+                        };
                 };
         };
 }
