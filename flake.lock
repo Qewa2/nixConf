@@ -707,11 +707,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1776500838,
-        "narHash": "sha256-KE5UB+whTQbUThg2JPuYHrhvmDYhj+3ZMD73s3zM/c0=",
+        "lastModified": 1776655505,
+        "narHash": "sha256-qBlz/PvFoAv65WzHAm7YN6ny8A4YUNW3c+ini2PAy3E=",
         "owner": "kuokuo123",
         "repo": "otter-launcher",
-        "rev": "e8f3b0778d15bfe35d7c821e7ce52b55bb5c597f",
+        "rev": "671fa97b088876b5cfd623a5f8a9a808eef1b8c6",
         "type": "github"
       },
       "original": {
