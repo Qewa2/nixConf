@@ -4,6 +4,11 @@
         inputs = {
                 nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
+                winit = {
+                        url = "github:Qewa2/winit";
+                        inputs.nixpkgs.follows = "nixpkgs";
+                };
+
                 home-manager = {
                         url = "github:nix-community/home-manager";
                         inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +30,12 @@
                         url = "github:NotAShelf/nvf";
                         inputs.nixpkgs.follows = "nixpkgs";
                 };
+
+                otter-launcher.url = "github:kuokuo123/otter-launcher";
+
+                fsel.url = "github:Mjoyufull/fsel";
+
+                wrappers.url = "github:lassulus/wrappers";
 
                 flake-parts.url = "github:hercules-ci/flake-parts";
 

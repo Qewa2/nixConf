@@ -1,18 +1,28 @@
-{
+{ self, ... }: {
         flake.nixosModules.gaming = { pkgs, ... }: {
-                programs.steam = {
-                        enable = true;
-                        remotePlay.openFirewall = true;
-                        dedicatedServer.openFirewall = true;
-                        localNetworkGameTransfers.openFirewall =true;
+                imports = [
+                        self.nixosModules.steam
+                        self.nixosModules.heroic
+                        # self.nixosModules.lutris
+                ];
+
+                programs = {
+                        gamemode.enable = true;
+                        gamescope = {
+                                enable = true;
+                                capSysNice = true;
+                        };
+                        steam.gamescopeSession.enable = true;
                 };
+                
                 environment.systemPackages = with pkgs; [
                         steam-run
-                        # lutris
-                        # protonup-rs
-                        # protonplus
-                        # wine
-                        # winetricks
+                        (heroic.override {
+                                extraPkgs = pkgs': with pkgs'; [
+                                        gamescope
+                                        gamemode
+                                ];
+                        })
                 ];
         };
 }
