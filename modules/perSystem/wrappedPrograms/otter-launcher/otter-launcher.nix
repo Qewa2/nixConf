@@ -9,6 +9,7 @@
                                 pkgs.bash
                                 pkgs.nh
                                 pkgs.fzf
+                                pkgs.wiremix
                         ];
 
                         flags = {

@@ -225,3 +225,14 @@ choice="$(
 """
 with_argument = false
 unbind_proc = true
+
+[[modules]]
+description = "audiomixer"
+prefix = "s"
+cmd = """
+mmsg -d resizewin,+300,+100
+mmsg -d centerwin
+wiremix
+"""
+with_argument = false
+unbind_proc = false
