@@ -7,6 +7,9 @@
                                 inputs.mangowm.packages.${pkgs.stdenv.hostPlatform.system}.mango
                                 self.packages.${pkgs.stdenv.hostPlatform.system}.launcher
                                 pkgs.kitty
+                                pkgs.playerctl
+                                pkgs.wireplumber
+                                pkgs.brightnessctl
                                 pkgs.bibata-cursors
                         ];
 
