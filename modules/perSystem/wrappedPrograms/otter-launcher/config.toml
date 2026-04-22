@@ -175,7 +175,7 @@ mmsg -d resizewin,+200,-100
 mmsg -d centerwin
 nh clean all --ask --keep 7
 nix-store --optimise
-while ture; do
+while true; do
         sleep 1
 done
 """
