@@ -10,6 +10,7 @@
                                 pkgs.nh
                                 pkgs.fzf
                                 pkgs.wiremix
+                                pkgs.impala
                         ];
 
                         flags = {

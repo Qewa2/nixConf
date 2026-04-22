@@ -236,3 +236,14 @@ wiremix
 """
 with_argument = false
 unbind_proc = false
+
+[[modules]]
+description = "connect to wifi"
+prefix = "wifi"
+cmd = """
+mmsg -d resizewin,+300,+100
+mmsg -d centerwin
+impala
+"""
+with_argument = false
+unbind_proc = false
