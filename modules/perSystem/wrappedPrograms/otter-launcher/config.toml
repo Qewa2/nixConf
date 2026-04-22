@@ -77,21 +77,21 @@ description = "launch with fsel"
 prefix = "a"
 cmd = "fsel --detach -ss {}"
 with_argument = true
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "launch app directly"
 prefix = "app"
 cmd = "fsel --detach --match-mode exact --program {} || fsel --detach -ss {}"
 with_argument = true
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "kill apps instantly"
 prefix = "kill"
 cmd = "pkill {}"
 with_argument = true
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "brave search"
@@ -111,7 +111,7 @@ whiel true; do
 done
 """
 with_argument = true
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "search packages"
@@ -123,7 +123,7 @@ while true; do
 done
 """
 with_argument = true
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "update system"
@@ -137,7 +137,7 @@ while true; do
 done
 """
 with_argument = true
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "update system and commit"
@@ -151,7 +151,7 @@ while true; do
 done
 """
 with_argument = false
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "rebuild without updating"
@@ -165,7 +165,7 @@ while true; do
 done
 """
 with_argument = false
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "cleanup nix & nix-store"
@@ -180,7 +180,7 @@ while true; do
 done
 """
 with_argument = false
-unbind_proc = true
+unbind_proc = false
 
 [[modules]]
 description = "exit launcher"
@@ -224,4 +224,35 @@ choice="$(
 [ -n "$choice" ] && mmsg -s -l "$choice"
 """
 with_argument = false
-unbind_proc = true
+unbind_proc = false
+
+[[modules]]
+description = "audiomixer"
+prefix = "s"
+cmd = """
+mmsg -d resizewin,+300,+100
+mmsg -d centerwin
+wiremix
+"""
+with_argument = false
+unbind_proc = false
+
+[[modules]]
+description = "wifi manager"
+prefix = "wifi"
+cmd = """
+mmsg -d resizewin,+300,+100
+mmsg -d centerwin
+impala
+"""
+with_argument = false
+unbind_proc = false
+
+[[modules]]
+description = "buluetooth manager"
+prefix = "blue"
+cmd = """
+mmsg -d resizewin,+300,+100
+mmsg -d centerwin
+bluetui
+"""

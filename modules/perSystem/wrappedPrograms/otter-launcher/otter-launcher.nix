@@ -9,6 +9,9 @@
                                 pkgs.bash
                                 pkgs.nh
                                 pkgs.fzf
+                                pkgs.wiremix
+                                pkgs.impala
+                                pkgs.bluetui
                         ];
 
                         flags = {
