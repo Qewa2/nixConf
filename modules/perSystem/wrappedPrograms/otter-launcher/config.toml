@@ -132,8 +132,9 @@ cmd = """
 mmsg -d resizewin,+200,-100
 mmsg -d centerwin
 nh os switch -H main --diff always --ask --update
-mmsg -d resizewin,-200,+100
-sleep 0.1
+while true; do
+        sleep 1
+done
 """
 with_argument = true
 unbind_proc = true
@@ -145,8 +146,9 @@ cmd = """
 mmsg -d resizewin,+200,-100
 mmsg -d centerwin
 nh os switch -H main --diff always --ask --update --commit-lock-file
-mmsg -d resizewin,-200,+100
-sleep 0.1
+while true; do
+        sleep 1
+done
 """
 with_argument = false
 unbind_proc = true
@@ -158,8 +160,9 @@ cmd = """
 mmsg -d resizewin,+200,-100
 mmsg -d centerwin
 nh os switch -H main --diff always --ask
-mmsg -d resizewin,-200,+100
-sleep 0.1
+while true; do
+        sleep 1
+done
 """
 with_argument = false
 unbind_proc = true
@@ -172,8 +175,9 @@ mmsg -d resizewin,+200,-100
 mmsg -d centerwin
 nh clean all --ask --keep 7
 nix-store --optimise
-mmsg -d resizewin,-200,+100
-sleep 0.1
+while ture; do
+        sleep 1
+done
 """
 with_argument = false
 unbind_proc = true

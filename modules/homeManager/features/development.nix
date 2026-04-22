@@ -12,6 +12,8 @@
                         clang
                         cmake
                         meson
+
+                        pkg-config
                 ];
         };
 }
