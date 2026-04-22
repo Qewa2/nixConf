@@ -238,7 +238,7 @@ with_argument = false
 unbind_proc = false
 
 [[modules]]
-description = "connect to wifi"
+description = "wifi manager"
 prefix = "wifi"
 cmd = """
 mmsg -d resizewin,+300,+100
@@ -247,3 +247,12 @@ impala
 """
 with_argument = false
 unbind_proc = false
+
+[[modules]]
+description = "buluetooth manager"
+prefix = "blue"
+cmd = """
+mmsg -d resizewin,+300,+100
+mmsg -d centerwin
+bluetui
+"""

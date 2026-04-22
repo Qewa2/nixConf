@@ -11,6 +11,7 @@
                                 pkgs.fzf
                                 pkgs.wiremix
                                 pkgs.impala
+                                pkgs.bluetui
                         ];
 
                         flags = {
