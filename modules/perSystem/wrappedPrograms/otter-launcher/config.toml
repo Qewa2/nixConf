@@ -228,7 +228,7 @@ unbind_proc = false
 
 [[modules]]
 description = "audiomixer"
-prefix = "s"
+prefix = "au"
 cmd = """
 mmsg -d resizewin,+300,+100
 mmsg -d centerwin
