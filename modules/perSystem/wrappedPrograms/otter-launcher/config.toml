@@ -44,7 +44,7 @@ footer = ""
 
 suggestion_lines = 20
 list_prefix = "    "
-selection_prefix = "  \u001B[32;1m"
+selection_prefix = "> \u001B[32;1m"
 prefix_padding = 4
 
 default_module_message = "    launch \u001B[33mapps\u001B[0m"
@@ -228,7 +228,7 @@ unbind_proc = false
 
 [[modules]]
 description = "audiomixer"
-prefix = "s"
+prefix = "au"
 cmd = """
 mmsg -d resizewin,+300,+100
 mmsg -d centerwin
