@@ -33,6 +33,8 @@
                                         ncdu
                                         brave
                                         wl-clipboard
+                                        blender
+                                        freecad
                                         inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
                                         self.packages.${pkgs.stdenv.hostPlatform.system}.fsel
                                         self.packages.${pkgs.stdenv.hostPlatform.system}.otter-launcher
