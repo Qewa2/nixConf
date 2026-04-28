@@ -1,7 +1,7 @@
 # nixConf
 
 ## How do you use my Config?
-### Add your own Confgi
+### Add your own Config
 To use my config you can just clone it with
 ```
 git clone https://github.com/Qewa2/nixConf.git
